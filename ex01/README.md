@@ -4,7 +4,7 @@
 
 ## Parte 1: > Compile o programa sem nenhuma opção de compilação extra.
 
-- [ ] > Compile o programa sem nenhuma opção de compilação extra. Quanto tempo ele gasta?
+- [x] > Compile o programa sem nenhuma opção de compilação extra. Quanto tempo ele gasta?
 - [ ] > Veja se o valor muda utilizando, separadamente, cada uma das otimizações -O0, -O1, -O2 -O3 (letra O maiúscula seguida de um número). Qual delas deu o melhor tempo?
 - [ ] > Existem outras otimizações que você pode aplicar no processador atual, consulte o manual do gcc por otimizações da categoria -mtune e veja quais se aplicam ao seu processador. Para que elas servem? O tempo melhorou?
 
