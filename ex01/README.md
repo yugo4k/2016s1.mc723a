@@ -13,6 +13,7 @@
 ## Parte 2: _Quebre o programa em dois arquivos separados: main.c com a função main e calc_primo.c com a função primo. Faça as alterações necessárias nos dois arquivos para que eles compilem._
 
 - [ ] _Como compilá-los? Você consegue montar um script que compile estes dois programas? E um Makefile?_
+Pode-se utilizar compiladores como o gcc diretamente da linha de comando ou a partir de scripts ou usando um Makefile. Exemplos de um shell script e um Makefile que compilam o programa foram carregados em ``https://github.com/yugo4k/2016s1.mc723a/tree/master/ex01/p2``.
 - [ ] _Rode novamente o programa e veja se ele gasta o mesmo tempo com a melhor otimização utilizada anteriormente. O resultado foi o esperado? Comente._
 
 ---
