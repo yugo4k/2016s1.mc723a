@@ -5,6 +5,7 @@
 ## Parte 1: _Compile o programa sem nenhuma opção de compilação extra._
 
 - [ ] _Compile o programa sem nenhuma opção de compilação extra. Quanto tempo ele gasta?_
+![histogram](p1/hist.png)
 
 - [ ] _Veja se o valor muda utilizando, separadamente, cada uma das otimizações -O0, -O1, -O2 -O3 (letra O maiúscula seguida de um número). Qual delas deu o melhor tempo?_
 
