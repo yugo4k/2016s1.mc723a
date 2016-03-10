@@ -2,8 +2,8 @@ CC=gcc
 # CFLAGS=-Wall -pedantic
 # CFLAGS=-Wall -pedantic -O0
 # CFLAGS=-Wall -pedantic -O1
-CFLAGS=-Wall -pedantic -O2
-# CFLAGS=-Wall -pedantic -O3
+# CFLAGS=-Wall -pedantic -O2
+CFLAGS=-Wall -pedantic -O3
 # CFLAGS=-Wall -pedantic -O3 -march=core2 -mtune=core2
 # CFLAGS=-Wall -pedantic -O3 -mtune=haswell
 
