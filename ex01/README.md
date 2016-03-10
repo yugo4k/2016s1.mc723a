@@ -10,9 +10,11 @@
 
 - [x] _Veja se o valor muda utilizando, separadamente, cada uma das otimizações -O0, -O1, -O2 -O3 (letra O maiúscula seguida de um número). Qual delas deu o melhor tempo?_
 
-[Apesar de _-O3_ ter tido um melhor tempo de ~1.34s, a diferença devido a essas otimizações é minima](p1) porque o algoritmo é excessivamente simples e o otimizador não consegue melhorar o desempenho.
+[Apesar de "_-O3_" ter tido um melhor tempo de ~1.34s, a diferença devido a essas otimizações é minima](p1) porque o algoritmo em questão é excessivamente primitivo e o otimizador não consegue melhorar o desempenho.
 
-- [ ] _Existem outras otimizações que você pode aplicar no processador atual, consulte o manual do gcc por otimizações da categoria -mtune e veja quais se aplicam ao seu processador. Para que elas servem? O tempo melhorou?_
+- [x] _Existem outras otimizações que você pode aplicar no processador atual, consulte o manual do gcc por otimizações da categoria -mtune e veja quais se aplicam ao seu processador. Para que elas servem? O tempo melhorou?_
+
+Pode-se usar os flags "_-march=[value]_" e "_-mtune=[value]_" para que o compilador use otimizações específicas do processador alvo. Novamente devido à primitividade do algoritmo usado essas otimizações não reduzem o tempo abaixo de [~1.34s](p1/hist_c.png), que não deve ser causado por mais do que oscilações no _load_ do sistema.
 
 ---
 
