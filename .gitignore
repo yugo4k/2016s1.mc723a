@@ -2,5 +2,6 @@
 *.o
 ex01/p?/main
 ex01/p?/primo
+ex01/p?/primo_omp
 pytests/
 */*/gmon.out
