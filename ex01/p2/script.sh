@@ -1,3 +1,3 @@
 #!/bin/sh
 
-gcc -pedantic -Wall -O3 -mtune=haswell -o main main.c calc_primo.c
+gcc -Wall -pedantic -O3 -march=core2 -mtune=core2 calc_primo.c main.c -o main

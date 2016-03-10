@@ -14,15 +14,15 @@
 
 - [x] _Existem outras otimizações que você pode aplicar no processador atual, consulte o manual do gcc por otimizações da categoria -mtune e veja quais se aplicam ao seu processador. Para que elas servem? O tempo melhorou?_
 
-Pode-se usar os flags "_-march=[value]_" e "_-mtune=[value]_" para que o compilador use otimizações específicas do processador alvo. Novamente devido à primitividade do algoritmo usado essas otimizações não reduzem o tempo abaixo de [~1.34s](p1/hist_c.png), que não deve ser causado por mais do que oscilações no _load_ do sistema.
+Pode-se usar as flags "_-march=[value]_" e "_-mtune=[value]_" para que o compilador use otimizações específicas do processador alvo. Novamente devido à primitividade do algoritmo usado essas otimizações não reduzem o tempo abaixo de [~1.34s](p1/hist_c.png), que não deve ser causado por mais do que oscilações no _load_ do sistema.
 
 ---
 
 ## Parte 2: _Quebre o programa em dois arquivos separados: main.c com a função main e calc_primo.c com a função primo. Faça as alterações necessárias nos dois arquivos para que eles compilem._
 
-- [ ] _Como compilá-los? Você consegue montar um script que compile estes dois programas? E um Makefile?_
+- [x] _Como compilá-los? Você consegue montar um script que compile estes dois programas? E um Makefile?_
 
-Pode-se utilizar compiladores como o gcc diretamente da linha de comando ou a partir de scripts ou usando um Makefile. Exemplos de um shell script e um Makefile que compilam o programa foram carregados em:
+Quebrando o algoritmo entre os _bodys_ [main.c](p2/main.c), [calc_primo.c](p2/calc_primo.c) e o _header_ [calc_primo.h](p2/calc_primo.h), pode-se utilizar compiladores como o gcc diretamente da linha de comando (e.g.  _gcc -Wall -pedantic -O3 -march=core2 -mtune=core2 calc_primo.c main.c -o main_) ou a partir de um [script](p2/script.sh) ou usando um [Makefile](p2/Makefile).
 `https://github.com/yugo4k/2016s1.mc723a/tree/master/ex01/p2``
 
 - [ ] _Rode novamente o programa e veja se ele gasta o mesmo tempo com a melhor otimização utilizada anteriormente. O resultado foi o esperado? Comente._

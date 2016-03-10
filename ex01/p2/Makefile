@@ -1,5 +1,6 @@
 CC=gcc
-CFLAGS=-Wall -pedantic -O3 -mtune=haswell
+CFLAGS=-Wall -pedantic -O3 -march=core2 -mtune=core2
+# CFLAGS=-Wall -pedantic -O3 -mtune=haswell
 
 all: main
 
