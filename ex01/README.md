@@ -64,10 +64,13 @@ Desta forma faz sentido paralelizar o _loop_ do `main`, uma vez que ele não ret
 
 - [x] _Como paralelizar de forma escalável o código?_
 
-Pode-se utilizar a função `omp_get_max_threads` para obter o número de _threads_ da máquina e utilizar o valor obtido como argumento da função `omp_set_num_threads`, tal que o programa sempre utilizará um número de _threads_ compatível com o número de núcleos da máquina.
+Pode-se utilizar a função `omp_get_max_threads` para obter o número de _threads_ da máquina e utilizar o valor obtido como argumento da função `omp_set_num_threads`, tal que o programa sempre utilizará um número de _threads_ compatível com o número de núcleos da máquina.  
 Outra forma seria definir um valor absurdamente alto para o número de _threads_ a serem executadas, mas isso causa um _overhead_ inaceitável para o desempenho e é totalmente contraindicado.
 
-- [ ] _Meça o tempo do programa paralelizado. O resultado foi o esperado? Comente._
+- [x] _Meça o tempo do programa paralelizado. O resultado foi o esperado? Comente._
+
+O tempo paralelizado caiu de [~1.04s](p5/hist_noomp.png) para [~0.770s](p5/hist_omp.png).  
+Não é a redução de 50% do tempo de execução que poderia inocentemente se esperar da paralelização com dois _cores_, mas ~26% já é uma redução significativa considerando o overhead da paralelização, as limitações de paralelização do algoritmo na sua [forma atual](p5/primo_omp.c) e o próprio _load_ intrínseco da máquina em estar funcionando e possibilitando a execução do programa.
 
 ---
 
