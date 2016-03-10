@@ -45,10 +45,12 @@ Uma suspeita é que as otimizações fazem com que a versão de um arquivo fonte
 
 - [x] _Em qual parte seu programa gasta mais tempo?_
 
-Como é de se esperar, o tempo de execução caiu quase pela metade com um melhor tempo de [~1.05s](p4/hist.png), visto que o número de ciclos do _loop_ da função primo foi praticamente cortado também pela metade. Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3` apresenta o resultado:  
+Como é de se esperar, o tempo de execução caiu quase pela metade com um melhor tempo de [~1.05s](p4/hist.png), visto que o número de ciclos do _loop_ da função primo foi praticamente cortado também pela metade.  
+Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3` apresenta o [resultado](p4/gprof_output_O3.txt):  
 ```Each sample counts as 0.01 seconds.
  no time accumulated```
 
+ Compilando com a otimização `-O1`, é obtida a informação de que o programa gasta [100% do tempo na função _primo_](p4/gprof_output_O1.txt).
 ---
 
 ## Parte 5: Paralelização pelo OpenMP
