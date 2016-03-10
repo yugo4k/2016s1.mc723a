@@ -22,8 +22,7 @@ Pode-se usar as flags "_-march=[value]_" e "_-mtune=[value]_" para que o compila
 
 - [x] _Como compilá-los? Você consegue montar um script que compile estes dois programas? E um Makefile?_
 
-Quebrando o algoritmo entre os _bodys_ [main.c](p2/main.c), [calc_primo.c](p2/calc_primo.c) e o _header_ [calc_primo.h](p2/calc_primo.h), pode-se utilizar compiladores como o gcc diretamente da linha de comando (e.g.  _gcc -Wall -pedantic -O3 -march=core2 -mtune=core2 calc_primo.c main.c -o main_) ou a partir de um [script](p2/script.sh) ou usando um [Makefile](p2/Makefile).
-`https://github.com/yugo4k/2016s1.mc723a/tree/master/ex01/p2``
+Quebrando o algoritmo entre os _bodys_ [main.c](p2/main.c), [calc_primo.c](p2/calc_primo.c) e o _header_ [calc_primo.h](p2/calc_primo.h), pode-se utilizar compiladores como o gcc diretamente da linha de comando (e.g.  `gcc -Wall -pedantic -O3 -march=core2 -mtune=core2 calc_primo.c main.c -o main`) ou a partir de um [script](p2/script.sh) ou usando um [Makefile](p2/Makefile).
 
 - [ ] _Rode novamente o programa e veja se ele gasta o mesmo tempo com a melhor otimização utilizada anteriormente. O resultado foi o esperado? Comente._
 
