@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "calc_primo.h"
+
+long int primo(unsigned long int n) {
+  int i = 0;
+
+  for (i = 2; i < n; ++i)
+    if (n % i == 0)
+      return 0;
+
+  return 1;
+}
 
 int main(int argn, char** argv) {
   unsigned long int i = 0, t = 0, n = 0;
@@ -17,7 +26,7 @@ int main(int argn, char** argv) {
   } 
 
   for (i = 2; i <= n; ++i)
-    t += calc_primo(i);
+    t += primo(i);
 
   printf("Existem %ld números primos entre 1 e %ld (inclusos).\n", t, n);
 

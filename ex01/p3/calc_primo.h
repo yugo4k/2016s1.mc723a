@@ -1,1 +1,1 @@
-int calc_primo(long int n);
+unsigned long int calc_primo(unsigned long int n);

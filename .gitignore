@@ -1,5 +1,5 @@
 *~
 *.o
-ex01/main
-ex01/primo
+ex01/p?/main
+ex01/p?/primo
 pytests/

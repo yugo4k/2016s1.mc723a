@@ -1,4 +1,4 @@
-int calc_primo(long int n) {
+unsigned long int calc_primo(unsigned long int n) {
   int i = 0;
 
   for (i = 2; i < n; ++i)

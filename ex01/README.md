@@ -26,13 +26,17 @@ Quebrando o algoritmo entre os _bodys_ [main.c](p2/main.c), [calc_primo.c](p2/ca
 
 - [x] _Rode novamente o programa e veja se ele gasta o mesmo tempo com a melhor otimização utilizada anteriormente. O resultado foi o esperado? Comente._
 
-A diferença entre o [resultado](p2/hist.png) desta versão e aquela mais rápida da parte 1 é inferior a 8 milisegundos, o que parece indicar apenas flutuações de _load_ do sistema. Além disso não foi encontrada qualquer referência a um programa ser quebrado entre diferentes includes afetar a performance de _runtime_, apenas o tempo de _linking_.
+A diferença entre o [resultado](p2/hist.png) desta versão e aquela mais rápida da parte 1 é inferior a .01s, o que parece indicar apenas flutuações de _load_ do sistema. Além disso, não foi encontrada qualquer referência sobre quebrar um programa com muitos _includes_ ter efeito sobre a performance de _runtime_, apenas deixando o tempo de _linking_ mais longo. Entretanto essa presunção foi questionada pelos resultados da parte 3.
 
 ---
 
 ## Parte 3: _Modifique seu programa para calcular quantos números primos existem entre 1 e n, seguindo o mesmo algoritmo utilizado, modificando apenas a função main e fazendo com que n seja um parâmetro passado por linha de comando._
 
-- [ ] _Meça o tempo com um arquivo fonte e com dois. O resultado foi o esperado? Comente._
+- [x] _Meça o tempo com um arquivo fonte e com dois. O resultado foi o esperado? Comente._
+
+As versões compiladas foram testadas com um n = 20000. Com as otimizações anteriores, o melhor tempo da versão de um arquivo fonte foi de [~2.00s](p3/hist_single_opt.png) e de dois arquivos fontes foi de [~2.10s](p3/hist_double_opt.png), uma diferença de ~5%. Com a suspeita de que essa divergência foi devido às otimizações, os testes foram refeitos sem as mesmas, com resultados de [~2.40s](p3/hist_single_noopt.png) e [~2.42s](p3/hist_double_noopt.png) para um e dois arquivos fonte respectivamente.
+
+A diferença de runtime entre as versões compiladas indica claramente que, entre as versões otimizadas, o programa de um arquivo fonte tem performance melhor que o de dois. Isso parece indicar que quando uma função é compilada separadamente do main, as otimizações realizadas pelo `gcc` são limitadas, já que o _linking_ ocorre em etapa posterior; uma suspeita óbvia é que as otimizações fazem com que a versão de um arquivo fonte torne a função de checagem de primo seja compilada _inline_, evitando a cópia desnecessária da variável do número a ser checado, por exemplo.
 
 ---
 
