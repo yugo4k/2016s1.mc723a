@@ -50,7 +50,7 @@ Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3`
 ```Each sample counts as 0.01 seconds.
  no time accumulated```
 
- Compilando com a otimização `-O1`, é obtida a informação de que o programa gasta [100% do tempo na função _primo_](p4/gprof_output_O1.txt).
+Compilando com a otimização `-O1`, é obtida a informação de que o programa gasta [100% do tempo na função _primo_](p4/gprof_output_O1.txt).
 ---
 
 ## Parte 5: Paralelização pelo OpenMP
