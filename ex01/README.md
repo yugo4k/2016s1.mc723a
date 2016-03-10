@@ -59,7 +59,7 @@ Já compilando com a otimização `-O1`, é obtida a informação de que o progr
 
 - [x] _Se você tiver que paralelizar alguma parte do código, qual parte você escolheria?_
 
-Foi experimentado paralelizar o _loop_ da função `primo`, porém isso a tornava ineficiente (aumentando várias vezes o tempo de execução) já que não se pode executar um `return` de um bloco paralelizado, tal que o _loop_ nesta forma precisa ser executado inteiramente antes que a função possa retornar.
+Foi experimentado paralelizar o _loop_ da função `primo`, porém isso a tornava ineficiente (aumentando várias vezes o tempo de execução) já que não se pode executar um `return` de um bloco paralelizado, tal que o _loop_ nesta forma precisa ser executado inteiramente antes que a função possa retornar.  
 Desta forma faz sentido paralelizar o _loop_ do `main`, uma vez que ele não retorna e cada ciclo é utilizado para checar independentemente se um número da sequência é primo ou não.
 
 - [x] _Como paralelizar de forma escalável o código?_
