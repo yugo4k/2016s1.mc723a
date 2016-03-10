@@ -24,7 +24,9 @@ Pode-se usar as flags "_-march=[value]_" e "_-mtune=[value]_" para que o compila
 
 Quebrando o algoritmo entre os _bodys_ [main.c](p2/main.c), [calc_primo.c](p2/calc_primo.c) e o _header_ [calc_primo.h](p2/calc_primo.h), pode-se utilizar compiladores como o gcc diretamente da linha de comando (e.g.  `gcc -Wall -pedantic -O3 -march=core2 -mtune=core2 calc_primo.c main.c -o main`) ou a partir de um [script](p2/script.sh) ou usando um [Makefile](p2/Makefile).
 
-- [ ] _Rode novamente o programa e veja se ele gasta o mesmo tempo com a melhor otimização utilizada anteriormente. O resultado foi o esperado? Comente._
+- [x] _Rode novamente o programa e veja se ele gasta o mesmo tempo com a melhor otimização utilizada anteriormente. O resultado foi o esperado? Comente._
+
+A diferença entre o [resultado](p3/hist.png) desta versão e aquela mais rápida da parte 1 é inferior a 8 milisegundos, o que parece indicar apenas flutuações de _load_ do sistema. Além disso não foi encontrada qualquer referência a um programa ser quebrado entre diferentes includes afetar a performance de _runtime_, apenas o tempo de _linking_.
 
 ---
 
