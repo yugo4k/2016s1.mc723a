@@ -10,7 +10,7 @@
 
 - [x] _Veja se o valor muda utilizando, separadamente, cada uma das otimizações -O0, -O1, -O2 -O3 (letra O maiúscula seguida de um número). Qual delas deu o melhor tempo?_
 
-[Apesar de "_-O3_" ter tido um melhor tempo de ~1.34s, a diferença devido a essas otimizações é minima](p1) porque o algoritmo em questão é excessivamente primitivo e o otimizador não consegue melhorar o desempenho.
+[Apesar de `-O3` ter tido um melhor tempo de ~1.34s, a diferença devido a essas otimizações é minima](p1) porque o algoritmo em questão é excessivamente primitivo e o otimizador não consegue melhorar o desempenho.
 
 - [x] _Existem outras otimizações que você pode aplicar no processador atual, consulte o manual do gcc por otimizações da categoria -mtune e veja quais se aplicam ao seu processador. Para que elas servem? O tempo melhorou?_
 
@@ -34,15 +34,23 @@ A diferença entre o [resultado](p2/hist.png) desta versão e aquela mais rápid
 
 - [x] _Meça o tempo com um arquivo fonte e com dois. O resultado foi o esperado? Comente._
 
-As versões compiladas foram testadas com um n = 20000. Com as otimizações anteriores, o melhor tempo da versão de um arquivo fonte foi de [~2.00s](p3/hist_single_opt.png) e de dois arquivos fontes foi de [~2.10s](p3/hist_double_opt.png), uma diferença de ~5%. Com a suspeita de que essa divergência foi devido às otimizações, os testes foram refeitos sem as mesmas, com resultados de [~2.40s](p3/hist_single_noopt.png) e [~2.42s](p3/hist_double_noopt.png) para um e dois arquivos fonte respectivamente.
+As versões compiladas foram testadas com um n = 40000. Com as otimizações anteriores, o melhor tempo da versão de um arquivo fonte foi de [~2.00s](p3/hist_single_opt.png) e de dois arquivos fontes foi de [~2.10s](p3/hist_double_opt.png), uma diferença de ~5%. Com a suspeita de que essa divergência foi devido às otimizações, os testes foram refeitos sem as mesmas, com resultados de [~2.40s](p3/hist_single_noopt.png) e [~2.42s](p3/hist_double_noopt.png) para um e dois arquivos fonte respectivamente.
 
-A diferença de runtime entre as versões compiladas indica claramente que, entre as versões otimizadas, o programa de um arquivo fonte tem performance melhor que o de dois. Isso parece indicar que quando uma função é compilada separadamente do main, as otimizações realizadas pelo `gcc` são limitadas, já que o _linking_ ocorre em etapa posterior; uma suspeita óbvia é que as otimizações fazem com que a versão de um arquivo fonte torne a função de checagem de primo seja compilada _inline_, evitando a cópia desnecessária da variável do número a ser checado, por exemplo.
+A diferença do tempo de execução entre as versões compiladas indica claramente que, entre as versões otimizadas, o programa de um arquivo fonte tem performance melhor que o de dois. Isso parece indicar que quando uma função é compilada separadamente do main, as otimizações realizadas pelo `gcc` são limitadas, já que o _linking_ ocorre em etapa posterior.
+Uma suspeita é que as otimizações fazem com que a versão de um arquivo fonte torne a função de checagem de primo seja compilada _inline_, evitando a cópia desnecessária da variável do número a ser checado, por exemplo.
 
 ---
 
 ## Parte 4: _Edite o laço da função primo para varrer apenas os números ímpares, dividindo o conjunto de números a testar por dois._
 
-- [ ] _Em qual parte seu programa gasta mais tempo?_
+- [x] _Em qual parte seu programa gasta mais tempo?_
+
+Como é de se esperar, o tempo de execução caiu quase pela metade com um melhor tempo de [~1.05s](p4/hist.png), visto que o número de ciclos do _loop_ da função primo foi praticamente cortado também pela metade.
+Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3` apresenta o resultado
+```
+Each sample counts as 0.01 seconds.
+ no time accumulated
+```
 
 ---
 
