@@ -49,16 +49,20 @@ Como é de se esperar, o tempo de execução caiu quase pela metade com um melho
 Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3` apresenta o [resultado](p4/gprof_output_O3.txt):  
 ```Each sample counts as 0.01 seconds.
  no time accumulated```
+Isso parece confirmar a suspeita de que o _loop_ é passado diretamente para o corpo do `main` nestas otimizações, tal que o `gprof` não tem tempos de chamada de função para medir já que estas não estariam ocorrendo.
 
-Compilando com a otimização `-O1`, é obtida a informação de que o programa gasta [100% do tempo na função _primo_](p4/gprof_output_O1.txt).
+Já compilando com a otimização `-O1`, é obtida a informação de que o programa gasta [100% do tempo na função _primo_](p4/gprof_output_O1.txt).
 
 ---
 
 ## Parte 5: Paralelização pelo OpenMP
 
-- [ ] _Se você tiver que paralelizar alguma parte do código, qual parte você escolheria?_
+- [x] _Se você tiver que paralelizar alguma parte do código, qual parte você escolheria?_
 
-- [ ] _Como paralelizar de forma escalável o código?_
+Foi experimentado paralelizar o _loop_ da função `primo`, porém isso a tornava ineficiente (aumentando várias vezes o tempo de execução) já que não se pode executar um `return` de um bloco paralelizado, tal que o _loop_ nesta forma precisa ser executado inteiramente antes que a função possa retornar.
+Desta forma faz sentido paralelizar o _loop_ do `main`, uma vez que ele não retorna e cada ciclo é utilizado para checar independentemente se um número da sequência é primo ou não.
+
+- [x] _Como paralelizar de forma escalável o código?_
 
 - [ ] _Meça o tempo do programa paralelizado. O resultado foi o esperado? Comente._
 
