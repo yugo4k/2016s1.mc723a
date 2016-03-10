@@ -36,7 +36,7 @@ A diferença entre o [resultado](p2/hist.png) desta versão e aquela mais rápid
 
 As versões compiladas foram testadas com um n = 40000. Com as otimizações anteriores, o melhor tempo da versão de um arquivo fonte foi de [~2.00s](p3/hist_single_opt.png) e de dois arquivos fontes foi de [~2.10s](p3/hist_double_opt.png), uma diferença de ~5%. Com a suspeita de que essa divergência foi devido às otimizações, os testes foram refeitos sem as mesmas, com resultados de [~2.40s](p3/hist_single_noopt.png) e [~2.42s](p3/hist_double_noopt.png) para um e dois arquivos fonte respectivamente.
 
-A diferença do tempo de execução entre as versões compiladas indica claramente que, entre as versões otimizadas, o programa de um arquivo fonte tem performance melhor que o de dois. Isso parece indicar que quando uma função é compilada separadamente do main, as otimizações realizadas pelo `gcc` são limitadas, já que o _linking_ ocorre em etapa posterior.
+A diferença do tempo de execução entre as versões compiladas indica claramente que, entre as versões otimizadas, o programa de um arquivo fonte tem performance melhor que o de dois. Isso parece indicar que quando uma função é compilada separadamente do main, as otimizações realizadas pelo `gcc` são limitadas, já que o _linking_ ocorre em etapa posterior.  
 Uma suspeita é que as otimizações fazem com que a versão de um arquivo fonte torne a função de checagem de primo seja compilada _inline_, evitando a cópia desnecessária da variável do número a ser checado, por exemplo.
 
 ---
@@ -48,7 +48,7 @@ Uma suspeita é que as otimizações fazem com que a versão de um arquivo fonte
 Como é de se esperar, o tempo de execução caiu quase pela metade com um melhor tempo de [~1.05s](p4/hist.png), visto que o número de ciclos do _loop_ da função primo foi praticamente cortado também pela metade.  
 Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3` apresenta o [resultado](p4/gprof_output_O3.txt):  
 ```Each sample counts as 0.01 seconds.
- no time accumulated```
+ no time accumulated```  
 Isso parece confirmar a suspeita de que o _loop_ é passado diretamente para o corpo do `main` nestas otimizações, tal que o `gprof` não tem tempos de chamada de função para medir já que estas não estariam ocorrendo.
 
 Já compilando com a otimização `-O1`, é obtida a informação de que o programa gasta [100% do tempo na função _primo_](p4/gprof_output_O1.txt).
@@ -63,6 +63,9 @@ Foi experimentado paralelizar o _loop_ da função `primo`, porém isso a tornav
 Desta forma faz sentido paralelizar o _loop_ do `main`, uma vez que ele não retorna e cada ciclo é utilizado para checar independentemente se um número da sequência é primo ou não.
 
 - [x] _Como paralelizar de forma escalável o código?_
+
+Pode-se utilizar a função `omp_get_max_threads` para obter o número de _threads_ da máquina e utilizar o valor obtido como argumento da função `omp_set_num_threads`, tal que o programa sempre utilizará um número de _threads_ compatível com o número de núcleos da máquina.
+Outra forma seria definir um valor absurdamente alto para o número de _threads_ a serem executadas, mas isso causa um _overhead_ inaceitável para o desempenho e é totalmente contraindicado.
 
 - [ ] _Meça o tempo do programa paralelizado. O resultado foi o esperado? Comente._
 
