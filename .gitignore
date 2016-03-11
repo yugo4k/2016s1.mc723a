@@ -1,9 +1,3 @@
 *~
 *.o
-ex01/p?/main
-ex01/p?/primo
-ex01/p?/primo_omp
-ex01/p?/primo_sieve
-ex01/p?/primo_sieve_omp
 pytests/
-*/*/gmon.out
