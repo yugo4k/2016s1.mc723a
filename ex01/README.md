@@ -81,4 +81,5 @@ Não é a redução de 50% do tempo de execução que poderia inocentemente se e
 - A checagem de primos pode [ser interrompida assim que o divisor a ser checado é maior que metade do candidato](p6/primo_omp.c), o que reduz o tempo de execução (n = 40000) para [~0.552s](p6/hist_omp.png);
 
 - Usando o método da _Sieve of Eratosthenes_ é possível obter um tempo de execução de [~0.01s](p6/hist_sieve.png) para n = 40000, uma redução de de mais de 98% comparado ao tempo acima.  
-O tempo é de [~0.04s](p6/hist_sieve_1e6.png) para n = 10<sup>6</sup>, de [~1.11s](p6/hist_sieve_1e7.png) para n = 10<sup>7</sup> e de [~12.83](p6/hist_sieve_1e8.png) para n = 10<sup>8</sup>, o que mostra que o algoritmo tem uma complexidade próxima a `n·log(n)`.
+O tempo é de [~0.04s](p6/hist_sieve_1e6.png) para n = 10<sup>6</sup>, de [~1.11s](p6/hist_sieve_1e7.png) para n = 10<sup>7</sup> e de [~12.83](p6/hist_sieve_1e8.png) para n = 10<sup>8</sup>, o que mostra que o algoritmo tem uma complexidade próxima de `n·log(n)`.  
+Entretanto ele usa uma quantidade significativa de memória, o que limita o aumento do valor de `n` para o hardware atualmente utilizado.
