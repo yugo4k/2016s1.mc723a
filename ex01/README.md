@@ -78,5 +78,5 @@ Não é a redução de 50% do tempo de execução que poderia inocentemente se e
 
 - [x] _Como melhorar ainda mais o desempenho deste programa?_
 
-- A checagem de primos pode ser interrompida assim que o divisor a ser checado é maior que metade do candidato, o que reduz o tempo de execução (n = 40000) para [~0.552s](p6/hist_omp.png);
+- A checagem de primos pode [ser interrompida assim que o divisor a ser checado é maior que metade do candidato](p6/primo_omp.c), o que reduz o tempo de execução (n = 40000) para [~0.552s](p6/hist_omp.png);
 
