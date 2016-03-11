@@ -5,20 +5,15 @@
 long int primo(unsigned long int n) {
   unsigned long int i = 0;
 
-  /* int flag = 1; */
-
   if (n == 2)
     return 1;
   if (n % 2 == 0)
     return 0;
 
-/* #pragma omp parallel for */
-  for (i = 3; i < n; i += 2)
+  for (i = 3; 2 * i <= n; i += 2)
     if (n % i == 0)
-      /* flag = 0; */
       return 0;
 
-  /* return flag; */
   return 1;
 }
 

@@ -45,7 +45,7 @@ Uma suspeita é que as otimizações fazem com que a versão de um arquivo fonte
 
 - [x] _Em qual parte seu programa gasta mais tempo?_
 
-Como é de se esperar, o tempo de execução caiu quase pela metade com um melhor tempo de [~1.05s](p4/hist.png), visto que o número de ciclos do _loop_ da função primo foi praticamente cortado também pela metade.  
+Como é de se esperar, o tempo de execução (n = 40000) caiu quase pela metade com um melhor tempo de [~1.05s](p4/hist.png), visto que o número de ciclos do _loop_ da função primo foi praticamente cortado também pela metade.  
 Curiosamente, o `gprof` usado com o código compilado com as flags `-O2` e `-O3` apresenta o [resultado](p4/gprof_output_O3.txt):  
 ```Each sample counts as 0.01 seconds.
  no time accumulated```  
@@ -69,11 +69,14 @@ Outra forma seria definir um valor absurdamente alto para o número de _threads_
 
 - [x] _Meça o tempo do programa paralelizado. O resultado foi o esperado? Comente._
 
-O tempo paralelizado caiu de [~1.04s](p5/hist_noomp.png) para [~0.770s](p5/hist_omp.png).  
+O tempo paralelizado (n = 40000) caiu de [~1.04s](p5/hist_noomp.png) para [~0.770s](p5/hist_omp.png).  
 Não é a redução de 50% do tempo de execução que poderia inocentemente se esperar da paralelização com dois _cores_, mas ~26% já é uma redução significativa considerando o overhead da paralelização, as limitações de paralelização do algoritmo na sua [forma atual](p5/primo_omp.c) e o próprio _load_ intrínseco da máquina em estar funcionando e possibilitando a execução do programa.
 
 ---
 
 ## Parte 6: Outras formas de otimização
 
-- [ ] _Como melhorar ainda mais o desempenho deste programa?_
+- [x] _Como melhorar ainda mais o desempenho deste programa?_
+
+- A checagem de primos pode ser interrompida assim que o divisor a ser checado é maior que metade do candidato, o que reduz o tempo de execução (n = 40000) para [~0.552s](p6/hist_omp.png);
+
