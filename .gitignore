@@ -3,5 +3,6 @@
 ex01/p?/main
 ex01/p?/primo
 ex01/p?/primo_omp
+ex01/p?/primo_sieve
 pytests/
 */*/gmon.out

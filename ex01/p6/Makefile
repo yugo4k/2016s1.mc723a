@@ -1,10 +1,13 @@
 CC=gcc
 CFLAGS=-Wall -pedantic -O3 -march=core2 -mtune=core2
 
-all: primo_omp
+all: primo_omp primo_sieve
 
 primo_omp: primo_omp.c
 	$(CC) $(CFLAGS) -fopenmp primo_omp.c -o $@
 
+primo_sieve: primo_sieve.c
+	$(CC) $(CFLAGS) primo_sieve.c -o $@
+
 clean:
-	rm primo_omp
+	rm primo_omp primo_sieve

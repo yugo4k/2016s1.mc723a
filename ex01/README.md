@@ -69,7 +69,7 @@ Outra forma seria definir um valor absurdamente alto para o número de _threads_
 
 - [x] _Meça o tempo do programa paralelizado. O resultado foi o esperado? Comente._
 
-O tempo paralelizado (n = 40000) caiu de [~1.04s](p5/hist_noomp.png) para [~0.770s](p5/hist_omp.png).  
+O tempo paralelizado (n = 40000) caiu de [~1.04s](p5/hist_noomp.png) para [~0.77s](p5/hist_omp.png).  
 Não é a redução de 50% do tempo de execução que poderia inocentemente se esperar da paralelização com dois _cores_, mas ~26% já é uma redução significativa considerando o overhead da paralelização, as limitações de paralelização do algoritmo na sua [forma atual](p5/primo_omp.c) e o próprio _load_ intrínseco da máquina em estar funcionando e possibilitando a execução do programa.
 
 ---
@@ -80,3 +80,5 @@ Não é a redução de 50% do tempo de execução que poderia inocentemente se e
 
 - A checagem de primos pode [ser interrompida assim que o divisor a ser checado é maior que metade do candidato](p6/primo_omp.c), o que reduz o tempo de execução (n = 40000) para [~0.552s](p6/hist_omp.png);
 
+- Usando o método da _Sieve of Eratosthenes_ é possível obter um tempo de execução de [~0.01s](p6/hist_sieve.png) para n = 40000, uma redução de de mais de 98% comparado ao tempo acima.  
+O tempo é de [~0.04s](p6/hist_sieve_1e6.png) para n=10<sup>6</sup>, de [~1.11s](p6/hist_sieve_1e7.png) para n=10<sup>7</sup> e de [~12.83](p6/hist_sieve_1e8.png) para n=10<sup>8</sup>, o que mostra que o algoritmo tem uma complexidade próxima a `n·log(n)`.
