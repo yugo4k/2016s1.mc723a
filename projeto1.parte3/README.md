@@ -13,13 +13,14 @@ Entretanto, mesmo essa medida aparentemente simples pode ter significados difere
 Por exemplo, muitos grupos não apresentaram o melhor tempo de execução, escolhendo apresentar apenas o tempo médio; outros entendem que o tempo médio pode ser fortemente afetado pelo load da máquina devido a outros processos em execução, tal que a melhor medida é o menor tempo.  
 Outro exemplo é qual parte da máquina afeta mais significativamente o benchmark em questão (qual o _bottleneck_): a performance da CPU ou da GPU? Talvez o maior atraso seja devido ao barramento devido à comunicação de dados inerente ao benchmark?  
 
-Apesar de todas essas preocupações serem válidas, este relatório tornaria-se excessivamente longo caso cada possibilidade fosse avaliada. Assim, para a mensuração de performance da máquina em relação ao tempo de execução, de cada benchmark foi escolhida uma medida de tempo (o menor tempo, onde disponível). Espera-se que as máquinas tenham desempenho de CPU/GPU/barramento/etc compatíveis, tal que um alto desempenho de CPU corresponda a um bom desempenho de GPU, por exemplo.  
+Apesar de todas essas preocupações serem válidas, este relatório tornaria-se excessivamente longo caso cada possibilidade fosse avaliada. Assim, para a mensuração de performance da máquina em relação ao tempo de execução, de cada benchmark foi escolhida uma medida de tempo, o menor tempo, onde disponível: os desvios de tempo disponíveis mostraram-se geralmente pequenos de maneira geral.  
+Também espera-se que as máquinas tenham desempenho de CPU/GPU/barramento/etc compatíveis, tal que um alto desempenho de CPU corresponda a um bom desempenho de GPU, por exemplo.  
 Como os tempos de cada benchmark variam significativamente, para que se pudesse compor um score comparável entre diferentes benchmarks, o tempo de execução pela máquina foi dividido pela média de tempo daquele benchmark, tal que *as melhores máquinas tem o menor score*. Para que se possa então utilizar esses scores de diferentes benchmarks, para cada máquina o score final de tempo foi calculado como a média dos scores em cada benchmark; além disso máquinas com menos de 3 medidas foram consideradas sub-avaliadas e não participaram do _ranking_ das máquinas mais rápidas.
 
 Assim a fórmula de score de tempo para cada máquina ficou:  
 [2 < (número de participações em benchmarks)] · {Σ [(nota em benchmark) / (média do benchmark)]} / (número de participações em benchmarks)
 
-A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.ods). Segue abaixo a planilha de classificação, sem as máquinas desclassificadas por ter passado por menos de 3 benchmarks.
+A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.ods). Segue abaixo a planilha de classificação (sem as máquinas desclassificadas por terem passado por menos de 3 benchmarks).
 
 |machine|name|description|final score|position|
 |---|---|---|---|---|
