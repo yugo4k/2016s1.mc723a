@@ -21,6 +21,8 @@ Assim a fórmula de score de tempo para cada máquina ficou:
 
 A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.ods). Segue abaixo a planilha de classificação.
 
+<small>
+
 |machine|name|description|final score|position|
 |---|---|---|---|---|
 |27|Titouan Thibaud|Intel Core i7-2630QM CPU @2.00GHz Memory 4GiB Linux Mint|0|0|
@@ -53,6 +55,8 @@ A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.
 |16|Victor Souza|Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz; Memory 4GB, Fedora release 21|2.76|19|
 |3|Mateus Ruivo|Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz 3072 KB Cache, 4GB RAM DDR3, 5400rpm SATA|5.47|20|
 |23|Pedro Vasconcellos|Raspberry Pi, 900MHz quad-core ARM Cortex-A7 CPU, 1GB RAM, 32GB SD Card|5.87|21|
+
+</small>
 
 Percebe-se que existem grupos de scores muito próximos, o que reflete às máquinas atuais serem bastante parecidas, sendo o maior divisor a época do seu projeto.  
 Os Intel i7 e i5 tem desempenhos superiores, estando o AMD no fim deste grupo; abaixo os Intel Core 2 e Core Duo ficam claramente separadas no grupo inferior; por fim o Raspberry Pi fica por último, como esperado.  
