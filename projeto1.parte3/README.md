@@ -53,7 +53,7 @@ Parece surpreendente que um i7 esteja no grupo de baixo (17ª posição), mas o 
 
 ---
 
-### Avaliação de leitura e escrita em dispositivo de armazenamento
+### Avaliação de leitura e escrita em dispositivo de armazenamento utilizando o benchmark 3, "convolução"
 
 ![read/write speeds](./readwrite_speeds.png)
 
@@ -66,4 +66,8 @@ Dois fatos curiosos chamam bastante a atenção:
 
 ---
 
+### Avaliação de _page-faults_ utilizando o benchmark 2, "ffmpeg"
 
+![page-faults](./page-faults.png)
+
+Como é de se esperar, a máquina com SSD tem as melhores performances nestes quesitos.  
