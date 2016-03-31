@@ -70,4 +70,4 @@ Dois fatos curiosos chamam bastante a atenção:
 
 ![page-faults](./page-faults.png)
 
-Como é de se esperar, a máquina com SSD tem as melhores performances nestes quesitos.  
+Aqui observa-se que algumas das máquinas consideradas ultrapassadas tiveram um número comparativamente pequeno de _page-faults_, enquanto algumas das mais novas obtiveram os maiores números. Esta é outra medida difícil de se atribuir a configuração das máquinas, mesmo porque dependendo do _load_ da máquina no momento da medida, etc, a memória disponível para _cache_ pode estar bastante restrita.
