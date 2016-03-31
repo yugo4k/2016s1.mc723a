@@ -13,13 +13,13 @@ Entretanto, mesmo essa medida aparentemente simples pode ter significados difere
 Por exemplo, muitos grupos não apresentaram o melhor tempo de execução, escolhendo apresentar apenas o tempo médio; outros entendem que o tempo médio pode ser fortemente afetado pelo load da máquina devido a outros processos em execução, tal que a melhor medida é o menor tempo.  
 Outro exemplo é qual parte da máquina afeta mais significativamente o benchmark em questão (qual o _bottleneck_): a performance da CPU ou da GPU? Talvez o maior atraso seja devido ao barramento devido à comunicação de dados inerente ao benchmark?  
 
-Apesar de todas essas preocupações serem válidas, este relatório tornaria-se excessivamente longo caso cada possibilidade fosse avaliada. Assim, para a mensuração de performance da máquina em relação ao tempo de execução, de cada benchmark foi escolhida uma medida de tempo (o menor tempo onde disponível).  
-Como os tempos de cada benchmark variam significativamente, para que se pudesse compor um score comparável entre diferentes benchmarks, o tempo de execução pela máquina foi dividido pela média de tempo daquele benchmark, tal que as melhores máquinas tem o menor score. Para que se possa então utilizar esses scores de diferentes benchmarks, para cada máquina o score final de tempo foi calculado como a média dos scores em cada benchmark; além disso máquinas com menos de 3 medidas foram consideradas sub-avaliadas e não participaram do _ranking_ das máquinas mais rápidas.
+Apesar de todas essas preocupações serem válidas, este relatório tornaria-se excessivamente longo caso cada possibilidade fosse avaliada. Assim, para a mensuração de performance da máquina em relação ao tempo de execução, de cada benchmark foi escolhida uma medida de tempo (o menor tempo, onde disponível). Espera-se que as máquinas tenham desempenho de CPU/GPU/barramento/etc compatíveis, tal que um alto desempenho de CPU corresponda a um bom desempenho de GPU, por exemplo.  
+Como os tempos de cada benchmark variam significativamente, para que se pudesse compor um score comparável entre diferentes benchmarks, o tempo de execução pela máquina foi dividido pela média de tempo daquele benchmark, tal que *as melhores máquinas tem o menor score*. Para que se possa então utilizar esses scores de diferentes benchmarks, para cada máquina o score final de tempo foi calculado como a média dos scores em cada benchmark; além disso máquinas com menos de 3 medidas foram consideradas sub-avaliadas e não participaram do _ranking_ das máquinas mais rápidas.
 
 Assim a fórmula de score de tempo para cada máquina ficou:  
 [2 < (número de participações em benchmarks)] · {Σ [(nota em benchmark) / (média do benchmark)]} / (número de participações em benchmarks)
 
-A planilha de avaliação completa pode ser vista [aqui](./time_evaluation.ods).
+A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.ods). Segue abaixo a planilha de classificação.
 
 |machine|name|description|final score|position|
 |---|---|---|---|---|
@@ -54,6 +54,9 @@ A planilha de avaliação completa pode ser vista [aqui](./time_evaluation.ods).
 |3|Mateus Ruivo|Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz 3072 KB Cache, 4GB RAM DDR3, 5400rpm SATA|5.47|20|
 |23|Pedro Vasconcellos|Raspberry Pi, 900MHz quad-core ARM Cortex-A7 CPU, 1GB RAM, 32GB SD Card|5.87|21|
 
+Percebe-se que existem grupos de scores muito próximos, o que reflete às máquinas atuais serem bastante parecidas, sendo o maior divisor a época do seu projeto.  
+Os Intel i7 e i5 tem desempenhos superiores, estando o AMD no fim deste grupo; abaixo os Intel Core 2 e Core Duo ficam claramente separadas no grupo inferior; por fim o Raspberry Pi fica por último, como esperado.  
+É claro que o processador não é o único determinante dos tempos de execução como já foi mencionado, mas percebe-se que a qualidade dos outros componentes das máquinas tende a acompanhar a geração do processador no universo avaliado.
 
 ---
 
