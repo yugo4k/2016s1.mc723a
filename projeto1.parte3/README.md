@@ -56,4 +56,4 @@ Parece surpreendente que um i7 esteja no grupo de baixo (17ª posição), mas o 
 
 Como 
 
-[disk read](./disk_read.png)
+![disk read](./disk_read.png)
