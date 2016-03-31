@@ -19,3 +19,11 @@ Como os tempos de cada benchmark variam significativamente, para que se pudesse 
 Assim a fórmula de score de tempo para cada máquina ficou:  
 [2 < (número de participações em benchmarks)] · {Σ [(nota em benchmark) / (média do benchmark)]} / (número de participações em benchmarks)
 
+A planilha de avaliação completa pode ser vista [aqui](./time_evaluation.ods).
+
+
+---
+
+### Avaliação 
+
+Como 
