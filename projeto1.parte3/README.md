@@ -13,5 +13,5 @@ Apesar de todas essas preocupações serem válidas, este relatório tornaria-se
 Como os tempos de cada benchmark variam significativamente, para que se pudesse compor um score comparável entre diferentes benchmarks, o tempo de execução pela máquina foi dividido pela média de tempo daquele benchmark, tal que as melhores máquinas tem o menor score. Para que se possa então utilizar esses scores de diferentes benchmarks, para cada máquina o score final de tempo foi calculado como a média dos scores em cada benchmark; além disso máquinas com menos de 3 medidas foram consideradas sub-avaliadas e não participaram do _ranking_ das máquinas mais rápidas.
 
 Assim a fórmula de score de tempo para cada máquina ficou:  
-{Σ [(nota em benchmark) / (média do benchmark)]} / {número de participações em benchmarks}
+[2 < (número de participações em benchmarks)] · {Σ [(nota em benchmark) / (média do benchmark)]} / (número de participações em benchmarks)
 
