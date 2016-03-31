@@ -83,3 +83,4 @@ Este benchmark traz alguns problemas:
 Ainda assim é possível utilizar a medida de _cycles/period_ para avaliar o desempenho dos processadores, como abaixo:  
 ![cycles/period](./cycles_per_period.png)
 
+Do gráfico percebe-se como o Intel Atom perde no quesito frequência comparado a outras máquinas, enquanto processadores mais antigos como os da máquina 6 e 26 tem desempenhos melhores; isso é claro está relacionado a boa parte das medidas com máquinas mais modernas terem sido feitas com laptops, nos quais a preocupação com consumo de energia limita o clock dos processadores.
