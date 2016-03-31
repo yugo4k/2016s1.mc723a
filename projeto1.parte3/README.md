@@ -2,6 +2,8 @@
 ### Avaliação dos benchmarks realizados
 #### 033324 - Yugo Kuno
 
+---
+
 ### Avaliação geral de tempo entre os 8 benchmarks
 
 Como diversos benchmarks diferentes foram realizados, existem múltiplos parâmetros avaliados que variam de benchmark para benchmark; além disso em média cada máquina passou por apenas 3 das 8 opções de benchmark possíveis.  
