@@ -22,29 +22,29 @@ Assim a fórmula de score de tempo para cada máquina ficou:
 
 A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.ods). Segue abaixo a planilha de classificação (sem as máquinas desclassificadas por terem passado por menos de 3 benchmarks).
 
-|machine|name|description|final score|position|
-|---|---|---|---|---|
-|17|IC301-Titan|Intel® Core™2 Quad CPU Q8400 @ 2.66GHz × 4 Intel® Q45/Q43, 3.8GB RAM|0.32|1|
-|22|Pedro Grijó|Intel(R) Core(TM) i7-2670QM CPU @ 2.20GHz x4, 8GB DDR 1333Mhz ,Ubuntu 14.04LTS 32bits,HDD: SAMSUNG HN-M101MBB / 5400 RPM/ Sata III|0.33|2|
-|15|Gabriel Magalhães|Intel® Core™ i7-3612QM CPU @ 2.10GHz × 8; Memory 8GB, SSD Kingston 240GB V300 Sata III;  Ubuntu 15.04 |0.36|3|
-|20|Rodrigo Silva|Intel(R) Core(TM) i5-2450M @ 2.5GHZ; Memory 6GB|0.39|4|
-|25|Matheus Figueiredo|Intel Core i7-4700HQ CPU @ 2.4GHz, 16GB DDR3, Ubuntu 14.04LTS, HDD 5400RPM|0.42|5|
-|18|João Fidélis|Intel Core i7-Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz x 4, 16GB DDR3, Ubuntu 14.04LTS, HD: WD10S21X-24R1BTO / 7200RPM / Sata III|0.42|6|
-|4|Pedro Meireles|Intel® Core™ i5-4590 CPU @ 3.30GHz × 4;  Memory 8 GiB;  64-bit graph: Intel® Haswell Desktop , Gnome: Version 3.18.2; Disk 216.9 GB; Fedora 23|0.46|7|
-|12|debios| Intel(R) Core(TM) i7-3612QM CPU @ 2.10GHz x 4, 8 threads, 8GB, 64-bit, SSD 32GB, HDD1TB (5400rpm), Debian|0.51|8|
-|7|Cygnus X-1|Intel® Core™ i7 × 4;  Memory 8 GiB;  |0.54|9|
-|10|Renan Gomes|Intel® Core™ i7-4702MQ CPU @ 2.20GHz × 8 (64 bits) Memory 8 GiB; Graphics Intel® Haswell Mobile ; Ubuntu 14.04|0.56|10|
-|5|Klaus Rollman|Intel(R) Core(TM) i7-3610QM CPU 4 cores, 8 threads @ 2.30GHz @ L1 256 KB / L2 1024 KB / L3 6144 KB|0.61|11|
-|13|Gabriel Bueno|Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz x 2, 4 threads, 64-bit; Memory 8 GB DDR3; HD SATA 5400rpm;Ubuntu  15.10|0.68|12|
-|24|Wendrey|Intel Core i5-5200U CPU 2.20GHz x 4 L1 32KiB L2 256KiB L3 3MiB Memory 8GiB DDR3 Disk 1TB WDC WD10JPVX-22J Ubuntu 14.04 LTS|0.72|13|
-|6|yk0 - Yugo Kuno|AMD PhenonII, 4 cores, 3.2MHz; 10GB, ddr3, 1.333 MHz; hdd sata3, 7200rpm, 32MB buffer|0.81|14|
-|31|Netbook - Felipe Emos|Intel Atom Processor D4xx/D5xx/N4xx/N5xx DMI Bridge|1.08|15|
-|11|Bruno Hori - Mamonas|Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz|1.14|16|
-|14|Renan Castro|Intel(R) Core(TM) i7-3740QM CPU @ 2.70GHz @ 2 CORES @ Virtual Machine|1.26|17|
-|8|Luiz Sekijima|Intel® Core™2 Duo CPU T6500 @ 2.10GHz × 2, 4GB RAM|1.34|18|
-|16|Victor Souza|Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz; Memory 4GB, Fedora release 21|2.76|19|
-|3|Mateus Ruivo|Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz 3072 KB Cache, 4GB RAM DDR3, 5400rpm SATA|5.47|20|
-|23|Pedro Vasconcellos|Raspberry Pi, 900MHz quad-core ARM Cortex-A7 CPU, 1GB RAM, 32GB SD Card|5.87|21|
+|machine|name|description|count|final score|position| 
+|---|---|---|---|---|---| 
+|17|IC301-Titan|Intel® Core™2 Quad CPU Q8400 @ 2.66GHz × 4 Intel® Q45/Q43, 3.8GB RAM|3|0.32|1| 
+|22|Pedro Grijó|Intel(R) Core(TM) i7-2670QM CPU @ 2.20GHz x4, 8GB DDR 1333Mhz ,Ubuntu 14.04LTS 32bits,HDD: SAMSUNG HN-M101MBB / 5400 RPM/ Sata III|3|0.33|2| 
+|15|Gabriel Magalhães|Intel® Core™ i7-3612QM CPU @ 2.10GHz × 8; Memory 8GB, SSD Kingston 240GB V300 Sata III;  Ubuntu 15.04 |6|0.36|3| 
+|20|Rodrigo Silva|Intel(R) Core(TM) i5-2450M @ 2.5GHZ; Memory 6GB|3|0.39|4| 
+|25|Matheus Figueiredo|Intel Core i7-4700HQ CPU @ 2.4GHz, 16GB DDR3, Ubuntu 14.04LTS, HDD 5400RPM|3|0.42|5| 
+|18|João Fidélis|Intel Core i7-Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz x 4, 16GB DDR3, Ubuntu 14.04LTS, HD: WD10S21X-24R1BTO / 7200RPM / Sata III|3|0.42|6| 
+|4|Pedro Meireles|Intel® Core™ i5-4590 CPU @ 3.30GHz × 4;  Memory 8 GiB;  64-bit graph: Intel® Haswell Desktop , Gnome: Version 3.18.2; Disk 216.9 GB; Fedora 23|3|0.46|7| 
+|12|debios| Intel(R) Core(TM) i7-3612QM CPU @ 2.10GHz x 4, 8 threads, 8GB, 64-bit, SSD 32GB, HDD1TB (5400rpm), Debian|3|0.51|8| 
+|7|Cygnus X-1|Intel® Core™ i7 × 4;  Memory 8 GiB;  |3|0.54|9| 
+|10|Renan Gomes|Intel® Core™ i7-4702MQ CPU @ 2.20GHz × 8 (64 bits) Memory 8 GiB; Graphics Intel® Haswell Mobile ; Ubuntu 14.04|3|0.56|10| 
+|5|Klaus Rollman|Intel(R) Core(TM) i7-3610QM CPU 4 cores, 8 threads @ 2.30GHz @ L1 256 KB / L2 1024 KB / L3 6144 KB|3|0.61|11| 
+|13|Gabriel Bueno|Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz x 2, 4 threads, 64-bit; Memory 8 GB DDR3; HD SATA 5400rpm;Ubuntu  15.10|3|0.68|12| 
+|24|Wendrey|Intel Core i5-5200U CPU 2.20GHz x 4 L1 32KiB L2 256KiB L3 3MiB Memory 8GiB DDR3 Disk 1TB WDC WD10JPVX-22J Ubuntu 14.04 LTS|3|0.72|13| 
+|6|yk0 - Yugo Kuno|AMD PhenonII, 4 cores, 3.2MHz; 10GB, ddr3, 1.333 MHz; hdd sata3, 7200rpm, 32MB buffer|3|0.81|14| 
+|31|Netbook - Felipe Emos|Intel Atom Processor D4xx/D5xx/N4xx/N5xx DMI Bridge|3|1.08|15| 
+|11|Bruno Hori - Mamonas|Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz|4|1.14|16| 
+|14|Renan Castro|Intel(R) Core(TM) i7-3740QM CPU @ 2.70GHz @ 2 CORES @ Virtual Machine|3|1.26|17| 
+|8|Luiz Sekijima|Intel® Core™2 Duo CPU T6500 @ 2.10GHz × 2, 4GB RAM|3|1.34|18| 
+|16|Victor Souza|Intel(R) Core(TM)2 Quad CPU Q8400  @ 2.66GHz; Memory 4GB, Fedora release 21|3|2.76|19| 
+|3|Mateus Ruivo|Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz 3072 KB Cache, 4GB RAM DDR3, 5400rpm SATA|3|5.47|20| 
+|23|Pedro Vasconcellos|Raspberry Pi, 900MHz quad-core ARM Cortex-A7 CPU, 1GB RAM, 32GB SD Card|3|5.87|21| 
 
 Percebe-se que existem grupos de scores muito próximos, o que reflete às máquinas atuais serem bastante parecidas, sendo o maior divisor a época do seu projeto.  
 Os Intel i7 e i5 tem desempenhos superiores, estando o AMD no fim deste grupo; abaixo os Intel Core 2 e Core Duo ficam claramente separadas no grupo inferior; por fim o Raspberry Pi fica por último, como esperado.  
