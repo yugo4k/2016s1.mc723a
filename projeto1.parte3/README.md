@@ -53,8 +53,17 @@ Parece surpreendente que um i7 esteja no grupo de baixo (17ª posição), mas o 
 
 ---
 
-### Avaliação 
-
-Como 
+### Avaliação de leitura e escrita em dispositivo de armazenamento
 
 ![read/write speeds](./readwrite_speeds.png)
+
+Como é de se esperar, a máquina com SSD tem as melhores performances nestes quesitos.  
+Entretanto é difícil avaliar parte das máquinas por muitas descrições não detalharem qual o dispositivo de armazenamento utilizado, ou possuírem dois dispositivos e não ser possível determinar qual o dispositivo usado nos testes de leitura e escrita.
+
+Dois fatos curiosos chamam bastante a atenção:  
+1- a máquina 14 tem um dos melhores desempenhos apesar de ser um ambiente virtualizado; devido ao tamanho limitado dos arquivos eles tenham sido "armazenados" somente no dispositivo virtual, sem sair da memória RAM da máquina _host_?
+2- a máquina 6, do próprio autor, apesar de ter um dispositivo de armazenamento não excessivamente antigo, teve uma queda particularmente significativa de performance após algumas rodadas de testes, o que sugere que haja algum fator não conhecido interferindo com a medida.
+
+---
+
+
