@@ -20,6 +20,7 @@ Assim a fórmula de score de tempo para cada máquina ficou:
 [2 < (número de participações em benchmarks)] · {Σ [(nota em benchmark) / (média do benchmark)]} / (número de participações em benchmarks)
 
 A planilha de avaliação completa pode ser vista [aqui](./time_evaluation.ods).
+
 |machine|name|description|final score|position|
 |---|---|---|---|---|
 |27|Titouan Thibaud|Intel Core i7-2630QM CPU @2.00GHz Memory 4GiB Linux Mint|0|0|
