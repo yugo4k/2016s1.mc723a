@@ -47,6 +47,7 @@ A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.
 
 Percebe-se que existem grupos de scores muito próximos, o que reflete às máquinas atuais serem bastante parecidas, sendo o maior divisor a época do seu projeto.  
 Os Intel i7 e i5 tem desempenhos superiores, estando o AMD no fim deste grupo; abaixo os Intel Core 2 e Core Duo ficam claramente separadas no grupo inferior; por fim o Raspberry Pi fica por último, como esperado.  
+Parece surpreendente que um i7 esteja no grupo de baixo (17ª posição), mas o mesmo ocorre porque o benchmark foi realizado em uma máquina virtual na mesma.  
 É claro que o processador não é o único determinante dos tempos de execução como já foi mencionado, mas percebe-se que a qualidade dos outros componentes das máquinas tende a acompanhar a geração do processador no universo avaliado.
 
 ---
