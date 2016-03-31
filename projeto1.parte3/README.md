@@ -22,7 +22,7 @@ Assim a fórmula de score de tempo para cada máquina ficou:
 
 A planilha de avaliação completa pode ser encontrada [aqui](./time_evaluation.ods). Segue abaixo a planilha de classificação (sem as máquinas desclassificadas por terem passado por menos de 3 benchmarks).
 
-|machine|name|description|count|final score|position| 
+|machine|name|description|# of benchmarks|final score|position| 
 |---|---|---|---|---|---| 
 |17|IC301-Titan|Intel® Core™2 Quad CPU Q8400 @ 2.66GHz × 4 Intel® Q45/Q43, 3.8GB RAM|3|0.32|1| 
 |22|Pedro Grijó|Intel(R) Core(TM) i7-2670QM CPU @ 2.20GHz x4, 8GB DDR 1333Mhz ,Ubuntu 14.04LTS 32bits,HDD: SAMSUNG HN-M101MBB / 5400 RPM/ Sata III|3|0.33|2| 
