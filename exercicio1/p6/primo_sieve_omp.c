@@ -6,7 +6,9 @@ int main(int argn, char** argv) {
   unsigned long int i = 0, j = 0, t = 0, n = 0;
   short * array = NULL;
 
-  unsigned short n_threads = omp_get_max_threads();
+  unsigned long int calls = 0;
+
+  unsigned short n_threads = 1;//omp_get_max_threads();
   printf("using %u threads.\n", n_threads);
   omp_set_num_threads(n_threads);
 
@@ -21,7 +23,7 @@ int main(int argn, char** argv) {
     return 0;
   } 
 
-  array = (short*)calloc(n, sizeof(short));
+  array = (short*)calloc(n + 1, sizeof(short));
   if (!array) {
     printf("aborting, couldn't allocate the necessary memory.\n");
     return 0;
@@ -31,11 +33,16 @@ int main(int argn, char** argv) {
     if (array[i] == 0) {
       t += 1;
 #pragma omp parallel for
-      for (j = 2 * i; j <= n; j += i)
+      for (j = 2 * i; j <= n; j += i) {
+	printf("j: %lu\n", j);
 	array[j] = 1;
+#pragma omp critical
+	++calls;
+      }
     }
 
   printf("Existem %ld números primos entre 1 e %ld (inclusos).\n", t, n);
+  printf("%lu calls.\n", calls);
 
   free(array);
   array = NULL;
