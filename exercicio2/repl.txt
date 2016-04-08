@@ -1,9 +1,9 @@
-../../dinero4sbc/dineroIV -informat s -trname gcc_f2b -maxtrace 20 -l1-isize 64K -l1-ibsize 64 -l1-iassoc 2 -l1-irepl l -l1-ifetch d -l1-dsize 64K -l1-dbsize 64 -l1-dassoc 2 -l1-drepl l -l1-dfetch d -l2-usize 64K -l2-ubsize 64 -l2-uassoc 16 -l2-urepl l -l2-ufetch d
+../../dinero4sbc/dineroIV -informat s -trname gcc_f2b -maxtrace 20 -l1-isize 64K -l1-ibsize 64 -l1-iassoc 2 -l1-irepl l -l1-ifetch l -l1-dsize 64K -l1-dbsize 64 -l1-dassoc 2 -l1-drepl l -l1-dfetch l -l2-usize 512K -l2-ubsize 64 -l2-uassoc 16 -l2-urepl l -l2-ufetch l
 |trname|parameter|miss rate l1i|miss rate l1d|miss rate l2u|
 |---|---|---|---|---|
-|gcc_f2b|repl=l|0.002400|0.007800|0.504500|
-|gcc_f2b|repl=f|0.002600|0.008400|0.524900|
-|gcc_f2b|repl=r|0.002500|0.008600|0.497700|
-|gcc_m2b|repl=l|0.000100|0.037400|0.995700|
-|gcc_m2b|repl=f|0.000100|0.037400|0.995300|
-|gcc_m2b|repl=r|0.000100|0.037600|0.867900|
+|gcc_f2b|repl=l|0.002400|0.000000|0.002400|
+|gcc_f2b|repl=f|0.002600|0.000000|0.002600|
+|gcc_f2b|repl=r|0.002500|0.000000|0.002500|
+|gcc_m2b|repl=l|0.000100|0.000000|0.000100|
+|gcc_m2b|repl=f|0.000100|0.000000|0.000100|
+|gcc_m2b|repl=r|0.000100|0.000000|0.000100|
