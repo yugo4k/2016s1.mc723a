@@ -6,18 +6,18 @@ import subprocess as sp
 def main():
     traces = [('/home/staff/lucas/mc723/traces/176.gcc.f2b/', 'gcc_f2b'), ('/home/staff/lucas/mc723/traces/176.gcc.m2b', 'gcc_m2b')]
     for i, (tracepath, trname) in enumerate(traces):
-        for j, repl in enumerate(['l', 'f', 'r']):
-            varname = 'repl'
-            var = 'repl=%s' % repl
+        # for j, repl in enumerate(['l', 'f', 'r']):
+        #     varname = 'repl'
+        #     var = 'repl=%s' % repl
         # for j, fetch in enumerate(['d', 'a', 'm', 't', 'l']):
         #     varname = 'fetch'
         #     var = 'fetch=%s' % fetch
         # for j, walloc in enumerate(['a', 'n', 'f']):
         #     varname = 'walloc'
         #     var = 'walloc=%s' % walloc
-        # for j, wback in enumerate(['a', 'n', 'f']):
-        #     varname = 'wback'
-        #     var = 'wback=%s' % wback
+        for j, wback in enumerate(['a', 'n', 'f']):
+            varname = 'wback'
+            var = 'wback=%s' % wback
 
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
@@ -26,10 +26,11 @@ def main():
             args += ['-trname', trname]
             args += ['-maxtrace', '20']
 
-            # repl = 'l'
-            fetch = 'd'
+            repl = 'l'
+            # fetch = 'd'
+            fetch = 'a'
             walloc = 'a'
-            wback = 'a'
+            # wback = 'a'
 
             l1isize = '64K'
             l1ibsize = '64'
@@ -83,7 +84,7 @@ def main():
                 output_line = ' '.join(args)
                 print(output_line)
                 output_text = output_line + '\n'
-                output_line = '|trname|parameter|miss rate l1i|miss rate l1d|miss rate l2u|'
+                output_line = '|trname|parameter|miss rate L1i|miss rate L1d|miss rate L2u|'
                 print(output_line)
                 output_text += output_line + '\n'
                 output_line = '|---|---|---|---|---|'
@@ -93,7 +94,6 @@ def main():
             proc = sp.Popen(args, stdout=sp.PIPE, stderr=sp.PIPE)
             out, err = proc.communicate()
             counter = 0
-            list_cache = ['L1-i', 'L1-d', 'L2-u']
             for line in out.decode('utf-8').splitlines():
                 if 'rate' in line:
                     if counter == 0:
@@ -103,7 +103,7 @@ def main():
                     elif counter == 2:
                         rate_l2u = float(line.split()[3])
                     counter += 1
-            output_line = ('|%s|%s|%f|%f|%f|' % (trname, var, rate_l1i, rate_l1d, rate_l2u))
+            output_line = ('|%s|%s|%.4f|%.4f|%.4f|' % (trname, var, rate_l1i, rate_l1d, rate_l2u))
             print(output_line)
             output_text += output_line + '\n'
             # print('err:', err.decode('utf-8'))
