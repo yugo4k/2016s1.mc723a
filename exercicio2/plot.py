@@ -31,7 +31,7 @@ def main():
             m2bl1d.append(float(words[3]))
             m2bl2u.append(float(words[4]))
 
-    xlabel = 'block size'
+    xlabel = 'L1i block size'
 
     fig = plt.figure(facecolor='white', figsize=(16, 4), dpi=80)
     fig.subplots_adjust(left=.07, right=.97, top=.9, bottom=.2)
