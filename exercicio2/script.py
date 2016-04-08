@@ -30,12 +30,12 @@ def main():
         # for j, l1dsize in enumerate(['16K', '32K', '64K', '128K', '256K']):
         #     varname = 'l1dsize'
         #     var = 'l1dsize=%s' % l1dsize
-        for j, l1dbsize in enumerate(['16', '32', '64', '128', '256']):
-            varname = 'l1dbsize'
-            var = 'l1dbsize=%s' % l1dbsize
-        # for j, l1dassoc in enumerate(['1', '2', '4', '8', '16']):
-        #     varname = 'l1dassoc'
-        #     var = 'l1dassoc=%s' % l1dassoc
+        # for j, l1dbsize in enumerate(['16', '32', '64', '128', '256']):
+        #     varname = 'l1dbsize'
+        #     var = 'l1dbsize=%s' % l1dbsize
+        for j, l1dassoc in enumerate(['1', '2', '4', '8', '16']):
+            varname = 'l1dassoc'
+            var = 'l1dassoc=%s' % l1dassoc
 
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
@@ -64,7 +64,8 @@ def main():
             # l1dsize = '64K'
             l1dsize = '128K'
             # l1dbsize = '64'
-            l1dassoc = '2'
+            l1dbsize = '128'
+            # l1dassoc = '2'
             l1drepl = repl
             l1dfetch = fetch
             l1dwalloc = walloc

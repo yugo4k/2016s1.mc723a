@@ -80,8 +80,7 @@ Percebe-se que a políticas _always_ e _load forward_ obtiveram resultados acima
 ### Avaliação de _L1 instruction block size_
 
 ![L1i_block_size.png](L1i_block_size.png)
-
-[data](l1isize.md)
+[data](l1ibsize.md)
 
 O aumento do _miss rate_ de L1i é muito pequeno entre 32 e 128, enquanto os referentes a L1d e L2u continuam caindo em `f2b`; logo se escolhe um _block size_ de 128 para L1i a partir deste ponto.
 
@@ -89,6 +88,7 @@ O aumento do _miss rate_ de L1i é muito pequeno entre 32 e 128, enquanto os ref
 ### Avaliação de _L1 instruction cache size_
 
 ![L1i_cache_size.png](L1i_cache_size.png)
+[data](l1isize.md)
 
 O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da curva, o que obviamente não reflete a latência de busca dos ítens em _cache_ que cresce conforme o tamanho do mesmo aumenta; esta é uma das razões para os tamanhos de cache mais recentes não terem mudado significativamente. Desta forma faz-se uma escolha conservadora em não escolher um tamanho de _L1 instruction cache_ superior a 128K, considerando a redução marginal do _miss rate_, inferior a 2% em todos os casos.
 
@@ -96,5 +96,19 @@ O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da cu
 ### Avaliação de _L1 instruction associativity_
 
 ![L1i_associativity.png](L1i_associativity.png)
+[data](l1iassoc.md)
 
 O aumento de _associativity_ dá retornos positivos até o valor 8, tal que se define esta associatividade para todos os testes abaixo.
+
+### Avaliação de _L1 data block size_, _cache size_ e _associativity_
+
+![L1i_block_size.png](L1i_block_size.png)
+[data](l1ibsize.md)
+
+![L1i_cache_size.png](L1i_cache_size.png)
+[data](l1isize.md)
+
+![L1i_associativity.png](L1i_associativity.png)
+[data](l1iassoc.md)
+
+Não há qualquer alteração nos _miss rates_ após as alterações 
