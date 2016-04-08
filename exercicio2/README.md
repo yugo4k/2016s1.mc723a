@@ -125,8 +125,9 @@ Não há qualquer alteração nos _miss rates_ de _L1 data_ ou de _L2 unified_ a
 
 ### Conclusão
 
-Como o uso do `gcc` tem _miss rate_ estabilizado em todas as caches para valores menores ou iguais a 0.02% tanto para _f2b_ quanto para _m2b_, chega-se a conclusão que, para o uso *específico* deste programa e nas mesmas condições do trace realizado, não é necessário alterar mais do que a _L1 instruction_ e definir as políticas de _replacement_, _fetch_, _write allocate_ e _write back_.  
-Assim a configuração final fica:
+O uso do `gcc` tem _miss rate_ estabilizado em todas as caches para valores menores ou iguais a 0.02% tanto para _f2b_ quanto para _m2b_.  
+Assim chega-se a conclusão que, para o uso **específico** deste programa e nas mesmas condições do trace realizado, não é necessário alterar mais do que a _L1 instruction_ e definir as políticas de _replacement_, _fetch_, _write allocate_ e _write back_.  
+Logo a configuração final fica:
 
 |Policy|Parameter|
 |---|---|
