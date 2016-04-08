@@ -27,7 +27,7 @@ def main():
             args += ['-maxtrace', '20']
 
             # repl = 'l'
-            fetch = 'l'
+            fetch = 'd'
             walloc = 'a'
             wback = 'a'
 
@@ -93,7 +93,7 @@ def main():
             proc = sp.Popen(args, stdout=sp.PIPE, stderr=sp.PIPE)
             out, err = proc.communicate()
             counter = 0
-            list_cache = ['l1-i', 'l1-d', 'l2-u']
+            list_cache = ['L1-i', 'L1-d', 'L2-u']
             for line in out.decode('utf-8').splitlines():
                 if 'rate' in line:
                     if counter == 0:
