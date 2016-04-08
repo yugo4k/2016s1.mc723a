@@ -95,4 +95,4 @@ O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da cu
 
 ![L1i_associativity.png](L1i_associativity.png)
 
-O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da curva, o que obviamente não reflete a latência de busca dos ítens em _cache_ que cresce conforme o tamanho do mesmo aumenta; esta
+O aumento de _associativity_ dá retornos positivos até o valor 8, tal que se define esta associatividade para todos os testes abaixo.
