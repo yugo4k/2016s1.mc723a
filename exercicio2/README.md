@@ -79,3 +79,4 @@ Percebe-se que a políticas _always_ e _load forward_ obtiveram resultados acima
 
 ### Avaliação de _L1 instruction block size_
 
+![L1i_block_size.png](L1i_block_size.png)
