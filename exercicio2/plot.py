@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def main():
     filepath = sys.argv[1]
-    lines = open(filepath).read().splitlines()[3:]
+    lines = open(filepath).read().splitlines()[4:]
 
     f2bx = []
     f2bl1i = []
@@ -31,7 +31,7 @@ def main():
             m2bl1d.append(float(words[3]))
             m2bl2u.append(float(words[4]))
 
-    xlabel = 'L1i associativity'
+    xlabel = 'L1d associativity'
 
     fig = plt.figure(facecolor='white', figsize=(16, 4), dpi=80)
     fig.subplots_adjust(left=.07, right=.97, top=.9, bottom=.2)
@@ -43,8 +43,8 @@ def main():
     ax.set_ylabel('miss rate')
     ax.set_xticks(np.arange(len(f2bx)))
     ax.set_xticklabels(f2bx)
-    ax.plot(np.arange(len(f2bx)), f2bl1i, 'o-', label='L1i')
-    ax.plot(np.arange(len(f2bx)), f2bl1d, 'o-', label='L1d')
+    ax.plot(np.arange(len(f2bx)), f2bl1i, '^-', label='L1i')
+    ax.plot(np.arange(len(f2bx)), f2bl1d, 'v-', label='L1d')
     ax.plot(np.arange(len(f2bx)), f2bl2u, 'o-', label='L2u')
     ax.set_ylim((0, 1.1 * ax.get_ylim()[1]))
     handles, labels = ax.get_legend_handles_labels()
