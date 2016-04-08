@@ -88,5 +88,4 @@ O aumento do _miss rate_ de L1i é muito pequeno entre 32 e 128, enquanto os ref
 
 ![L1i_cache_size.png](L1i_cache_size.png)
 
-O aumento do _miss rate_ de L1i é muito pequeno entre 32 e 128, enquanto os referentes a L1d e L2u continuam caindo em `f2b`; logo se escolhe um _block size_ de 128 para L1i a partir deste ponto.
-
+O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da curva, o que obviamente não reflete a latência de busca dos ítens em _cache_ que cresce conforme o tamanho do mesmo aumenta; esta é uma das razões para os tamanhos de cache mais recentes não terem mudado significativamente. Desta forma faz-se uma escolha conservadora em não escolher um tamanho de _L1 instruction cache_ superior a 128K, considerando a redução marginal do _miss rate_, inferior a 2% em todos os casos.
