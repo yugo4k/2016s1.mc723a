@@ -36,15 +36,15 @@ def main():
         # for j, l1dassoc in enumerate(['1', '2', '4', '8', '16']):
         #     varname = 'l1dassoc'
         #     var = 'l1dassoc=%s' % l1dassoc
-        for j, l2usize in enumerate(['128K', '256K', '512K', '1M', '2M']):
-            varname = 'l2usize'
-            var = 'l2usize=%s' % l2usize
+        # for j, l2usize in enumerate(['128K', '256K', '512K', '1M', '2M']):
+        #     varname = 'l2usize'
+        #     var = 'l2usize=%s' % l2usize
         # for j, l2ubsize in enumerate(['16', '32', '64', '128', '256']):
         #     varname = 'l2ubsize'
         #     var = 'l2ubsize=%s' % l2ubsize
-        # for j, l2uassoc in enumerate(['4', '8', '16', '32', '64']):
-        #     varname = 'l2uassoc'
-        #     var = 'l2uassoc=%s' % l2uassoc
+        for j, l2uassoc in enumerate(['4', '8', '16', '32', '64']):
+            varname = 'l2uassoc'
+            var = 'l2uassoc=%s' % l2uassoc
 
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
@@ -81,9 +81,9 @@ def main():
             l1dwalloc = walloc
             l1dwback = wback
 
-            # l2usize = '512K'
+            l2usize = '512K'
             l2ubsize = '64'
-            l2uassoc = '16'
+            # l2uassoc = '16'
             l2urepl = repl
             l2ufetch = fetch
             l2uwalloc = walloc

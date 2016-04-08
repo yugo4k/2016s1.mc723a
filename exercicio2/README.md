@@ -18,7 +18,7 @@ Com esse objetivo, os parâmetros iniciais das _caches_ foram escolhidos a parti
 
 ### Avaliação de _replacement policy_
 
-|trname|parameter|miss rate L1i|miss rate L1d|miss rate L2u|
+|trname|Parameter|Miss rate L1i|Miss rate L1d|Miss rate L2u|
 |---|---|---|---|---|
 |gcc_f2b|repl=l|0.0024|0.0078|0.0886|
 |gcc_f2b|repl=f|0.0026|0.0084|0.0969|
@@ -50,7 +50,7 @@ Percebe-se que a política _Least Recently Used_ obteve os melhores resultados t
 (d=demand, a=always, m=miss, t=tagged, l=load forward, s=subblock)
 
 O parâmetro _subblock_ não foi utilizado já que esta configuração de cache não foi utilizada (default: `block size`) e não teria utilidade na avaliação de _fetch_.
-Percebe-se que a políticas _always_ e _load forward_ obtiveram resultados acima das outras e muito parecidos; como _always_ tem um desempenho em mais resultados de _f2b_ e _m2b, ela foi escolhida para o resto desta avaliação.
+Percebe-se que a políticas _always_ e _load forward_ obtiveram resultados acima das outras e muito parecidos; como _always_ tem melhor desempenho em mais resultados de _f2b_ e _m2b, ela foi escolhida para o resto desta avaliação.
 
 
 ### Avaliação de _write allocate policy_ e _write back policy_
@@ -90,7 +90,7 @@ O aumento do _miss rate_ de L1i é muito pequeno entre 32 e 128, enquanto os ref
 ![L1i_cache_size.png](L1i_cache_size.png)
 [data](l1isize.md)
 
-O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da curva, o que obviamente não reflete a latência de busca dos ítens em _cache_ que cresce conforme o tamanho do mesmo aumenta; esta é uma das razões para os tamanhos de cache mais recentes não terem mudado significativamente. Desta forma faz-se uma escolha conservadora em não escolher um tamanho de _L1 instruction cache_ superior a 128K, considerando a redução marginal do _miss rate_, inferior a 2% em todos os casos.
+O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da curva, o que obviamente não reflete a latência de busca dos ítens em _cache_ que cresce conforme o tamanho do mesmo aumenta; esta é uma das razões para os tamanhos de cache mais recentes não terem mudado significativamente. Desta forma faz-se uma escolha conservadora em não escolher um tamanho de _L1 instruction cache_ superior a 128K, considerando a redução marginal do _miss rate_, inferior a 0.02% em todos os casos.
 
 
 ### Avaliação de _L1 instruction associativity_
@@ -111,4 +111,31 @@ O aumento de _associativity_ dá retornos positivos até o valor 8, tal que se d
 ![L1d_associativity.png](L1d_associativity.png)
 [data](l1dassoc.md)
 
-Não há qualquer alteração nos _miss rates_ após as alterações 
+![L2u_block_size.png](L2u_block_size.png)
+[data](l2ubsize.md)
+
+![L2u_cache_size.png](L2u_cache_size.png)
+[data](l2usize.md)
+
+![L2u_associativity.png](L2u_associativity.png)
+[data](l2uassoc.md)
+
+Não há qualquer alteração nos _miss rates_ de _L1 data_ ou de _L2 unified_ após as alterações feitas em _L1 instruction_, tal que decide-se que os mesmos não terão suas configurações alteradas dos valores iniciais do início deste relatório.
+
+
+### Conclusão
+
+Como o uso do `gcc` tem _miss rate_ estabilizado em todas as caches para valores menores ou iguais a 0.02% tanto para _f2b_ quanto para _m2b_, chega-se a conclusão que, para o uso *específico* deste programa e nas mesmas condições do trace realizado, não é necessário alterar mais do que a _L1 instruction_ e definir as políticas de _replacement_, _fetch_, _write allocate_ e _write back_.  
+Assim a configuração final fica:
+
+|Policy|Parameter|
+|Replacement|LRU|
+|Fetch|always|
+|Write allocate|always|
+|Write back|always|
+
+|Cache|Cache size|Block size|Associativity|
+|---|---|---|---|
+|L1i (L1 instruction)|128K|128|8|
+|L1d (L1 data)|64K|64|2|
+|L2u (L2 unified)|512K|64|16|
