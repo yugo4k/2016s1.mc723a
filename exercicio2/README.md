@@ -75,5 +75,8 @@ Percebe-se que a políticas _always_ e _load forward_ obtiveram resultados acima
 
 (a=always, n=never, f=nofetch)
 
-É claro que alterar estas políticas não afetaram o _miss rate_ de nenhuma das caches.
+É claro que alterar estas políticas não afetaram o _miss rate_ de nenhuma das caches; a partir daqui a política usada será a de _always_.
+
+### Avaliação de _L1 instruction cache size_
+
 

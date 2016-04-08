@@ -15,9 +15,15 @@ def main():
         # for j, walloc in enumerate(['a', 'n', 'f']):
         #     varname = 'walloc'
         #     var = 'walloc=%s' % walloc
-        for j, wback in enumerate(['a', 'n', 'f']):
-            varname = 'wback'
-            var = 'wback=%s' % wback
+        # for j, wback in enumerate(['a', 'n', 'f']):
+        #     varname = 'wback'
+        #     var = 'wback=%s' % wback
+        # for j, l1isize in enumerate(['16K', '32K', '64K', '128K', '256K']):
+        #     varname = 'l1isize'
+        #     var = 'l1isize=%s' % l1isize
+        for j, l1ibsize in enumerate(['16', '32', '64', '128', '256']):
+            varname = 'l1ibsize'
+            var = 'l1ibsize=%s' % l1ibsize
 
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
@@ -30,10 +36,10 @@ def main():
             # fetch = 'd'
             fetch = 'a'
             walloc = 'a'
-            # wback = 'a'
+            wback = 'a'
 
             l1isize = '64K'
-            l1ibsize = '64'
+            # l1ibsize = '64'
             l1iassoc = '2'
             l1irepl = repl
             l1ifetch = fetch
