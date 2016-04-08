@@ -81,6 +81,8 @@ Percebe-se que a políticas _always_ e _load forward_ obtiveram resultados acima
 
 ![L1i_block_size.png](L1i_block_size.png)
 
+(data)[l1isize.txt]
+
 O aumento do _miss rate_ de L1i é muito pequeno entre 32 e 128, enquanto os referentes a L1d e L2u continuam caindo em `f2b`; logo se escolhe um _block size_ de 128 para L1i a partir deste ponto.
 
 
