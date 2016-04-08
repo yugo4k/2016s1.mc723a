@@ -33,9 +33,18 @@ def main():
         # for j, l1dbsize in enumerate(['16', '32', '64', '128', '256']):
         #     varname = 'l1dbsize'
         #     var = 'l1dbsize=%s' % l1dbsize
-        for j, l1dassoc in enumerate(['1', '2', '4', '8', '16']):
-            varname = 'l1dassoc'
-            var = 'l1dassoc=%s' % l1dassoc
+        # for j, l1dassoc in enumerate(['1', '2', '4', '8', '16']):
+        #     varname = 'l1dassoc'
+        #     var = 'l1dassoc=%s' % l1dassoc
+        for j, l2usize in enumerate(['128K', '256K', '512K', '1M', '2M']):
+            varname = 'l2usize'
+            var = 'l2usize=%s' % l2usize
+        # for j, l2ubsize in enumerate(['16', '32', '64', '128', '256']):
+        #     varname = 'l2ubsize'
+        #     var = 'l2ubsize=%s' % l2ubsize
+        # for j, l2uassoc in enumerate(['4', '8', '16', '32', '64']):
+        #     varname = 'l2uassoc'
+        #     var = 'l2uassoc=%s' % l2uassoc
 
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
@@ -66,12 +75,13 @@ def main():
             # l1dbsize = '64'
             l1dbsize = '128'
             # l1dassoc = '2'
+            l1dassoc = '8'
             l1drepl = repl
             l1dfetch = fetch
             l1dwalloc = walloc
             l1dwback = wback
 
-            l2usize = '512K'
+            # l2usize = '512K'
             l2ubsize = '64'
             l2uassoc = '16'
             l2urepl = repl
@@ -106,7 +116,7 @@ def main():
             if i == 0 and j == 0:
                 output_line = ' '.join(args)
                 print(output_line)
-                output_text = output_line + '\n'
+                output_text = output_line + '\n\n'
                 output_line = '|trname|parameter|miss rate L1i|miss rate L1d|miss rate L2u|'
                 print(output_line)
                 output_text += output_line + '\n'
@@ -131,7 +141,7 @@ def main():
             output_text += output_line + '\n'
             # print('err:', err.decode('utf-8'))
     print(output_text)
-    fout = open('/home/ec2014/ra033324/Desktop/mc723a/git_2016s1.mc723a/exercicio2/' + varname + '.txt', 'w')
+    fout = open('/home/ec2014/ra033324/Desktop/mc723a/git_2016s1.mc723a/exercicio2/' + varname + '.md', 'w')
     fout.write(output_text)
     fout.close()
 
