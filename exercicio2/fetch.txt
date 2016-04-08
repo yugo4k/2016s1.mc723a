@@ -1,0 +1,13 @@
+../../dinero4sbc/dineroIV -informat s -trname gcc_f2b -maxtrace 20 -l1-isize 64K -l1-ibsize 64 -l1-iassoc 2 -l1-irepl l -l1-ifetch d -l1-dsize 64K -l1-dbsize 64 -l1-dassoc 2 -l1-drepl l -l1-dfetch d -l2-usize 64K -l2-ubsize 64 -l2-uassoc 16 -l2-urepl l -l2-ufetch d
+|trname|parameter|miss rate l1i|miss rate l1d|miss rate l2u|
+|---|---|---|---|---|
+|gcc_f2b|fetch=d|0.002400|0.007800|0.504500|
+|gcc_f2b|fetch=a|0.001100|0.003300|0.002200|
+|gcc_f2b|fetch=m|0.001700|0.824600|0.003100|
+|gcc_f2b|fetch=t|0.001300|0.784300|0.003600|
+|gcc_f2b|fetch=l|0.002400|0.000000|0.002400|
+|gcc_m2b|fetch=d|0.000100|0.037400|0.995700|
+|gcc_m2b|fetch=a|0.000000|0.000100|0.000100|
+|gcc_m2b|fetch=m|0.000100|0.720200|0.000100|
+|gcc_m2b|fetch=t|0.000100|0.665800|0.000100|
+|gcc_m2b|fetch=l|0.000100|0.000000|0.000100|

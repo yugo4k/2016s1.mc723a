@@ -1,0 +1,9 @@
+../../dinero4sbc/dineroIV -informat s -trname gcc_f2b -maxtrace 20 -l1-isize 64K -l1-ibsize 64 -l1-iassoc 2 -l1-irepl l -l1-ifetch l -l1-dsize 64K -l1-dbsize 64 -l1-dassoc 2 -l1-drepl l -l1-dfetch l -l2-usize 64K -l2-ubsize 64 -l2-uassoc 16 -l2-urepl l -l2-ufetch l
+|trname|parameter|miss rate l1i|miss rate l1d|miss rate l2u|
+|---|---|---|---|---|
+|gcc_f2b|walloc=a|0.002400|0.000000|0.002400|
+|gcc_f2b|walloc=n|0.002400|0.000000|0.002400|
+|gcc_f2b|walloc=f|0.002400|0.000000|0.002400|
+|gcc_m2b|walloc=a|0.000100|0.000000|0.000100|
+|gcc_m2b|walloc=n|0.000100|0.000000|0.000100|
+|gcc_m2b|walloc=f|0.000100|0.000000|0.000100|
