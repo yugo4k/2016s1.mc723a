@@ -24,9 +24,18 @@ def main():
         # for j, l1ibsize in enumerate(['16', '32', '64', '128', '256']):
         #     varname = 'l1ibsize'
         #     var = 'l1ibsize=%s' % l1ibsize
-        for j, l1iassoc in enumerate(['1', '2', '4', '8', '16']):
-            varname = 'l1iassoc'
-            var = 'l1iassoc=%s' % l1iassoc
+        # for j, l1iassoc in enumerate(['1', '2', '4', '8', '16']):
+        #     varname = 'l1iassoc'
+        #     var = 'l1iassoc=%s' % l1iassoc
+        for j, l1dsize in enumerate(['16K', '32K', '64K', '128K', '256K']):
+            varname = 'l1dsize'
+            var = 'l1dsize=%s' % l1dsize
+        # for j, l1dbsize in enumerate(['16', '32', '64', '128', '256']):
+        #     varname = 'l1dbsize'
+        #     var = 'l1dbsize=%s' % l1dbsize
+        # for j, l1dassoc in enumerate(['1', '2', '4', '8', '16']):
+        #     varname = 'l1dassoc'
+        #     var = 'l1dassoc=%s' % l1dassoc
 
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
@@ -46,12 +55,13 @@ def main():
             # l1ibsize = '64'
             l1ibsize = '128'
             # l1iassoc = '2'
+            l1iassoc = '8'
             l1irepl = repl
             l1ifetch = fetch
             l1iwalloc = walloc
             l1iwback = wback
 
-            l1dsize = '64K'
+            # l1dsize = '64K'
             l1dbsize = '64'
             l1dassoc = '2'
             l1drepl = repl
