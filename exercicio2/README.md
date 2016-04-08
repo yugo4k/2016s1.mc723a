@@ -100,7 +100,7 @@ O decréscimo do _miss rate_ parece ser percentualmente constante ao longo da cu
 
 O aumento de _associativity_ dá retornos positivos até o valor 8, tal que se define esta associatividade para todos os testes abaixo.
 
-### Avaliação de _L1 data block size_, _cache size_ e _associativity_
+### Avaliação dos parâmetros _block size_, _cache size_ e _associativity_ de _L1 data_ e _L2 unified_ 
 
 ![L1d_block_size.png](L1d_block_size.png)
 [data](l1dbsize.md)
