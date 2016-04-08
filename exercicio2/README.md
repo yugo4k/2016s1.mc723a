@@ -102,13 +102,13 @@ O aumento de _associativity_ dá retornos positivos até o valor 8, tal que se d
 
 ### Avaliação de _L1 data block size_, _cache size_ e _associativity_
 
-![L1i_block_size.png](L1i_block_size.png)
-[data](l1ibsize.md)
+![L1d_block_size.png](L1d_block_size.png)
+[data](l1dbsize.md)
 
-![L1i_cache_size.png](L1i_cache_size.png)
-[data](l1isize.md)
+![L1d_cache_size.png](L1d_cache_size.png)
+[data](l1dsize.md)
 
-![L1i_associativity.png](L1i_associativity.png)
-[data](l1iassoc.md)
+![L1d_associativity.png](L1d_associativity.png)
+[data](l1dassoc.md)
 
 Não há qualquer alteração nos _miss rates_ após as alterações 
