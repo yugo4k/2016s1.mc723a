@@ -129,6 +129,7 @@ Como o uso do `gcc` tem _miss rate_ estabilizado em todas as caches para valores
 Assim a configuração final fica:
 
 |Policy|Parameter|
+|---|---|
 |Replacement|LRU|
 |Fetch|always|
 |Write allocate|always|
