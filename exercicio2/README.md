@@ -3,7 +3,16 @@
 
 ---
 
-Para esta avaliar a melhor configuração de cache para um programa, foi simulada com o software [dinero](http://www.cs.wisc.edu/~markhill/DineroIV/) as operações de cache do programa gcc a partir dos traces 176.gcc.f2b e 176.gcc.m2b disponíveis no seguinte [endereço da rede do IC](~lucas/mc723/traces).
+Para avaliar a melhor configuração de cache para um programa, foram simuladas com o software [dinero](http://www.cs.wisc.edu/~markhill/DineroIV/) as operações de cache do `gcc` a partir dos traces 176.gcc.f2b e 176.gcc.m2b disponíveis na rede do IC sob o path _~lucas/mc723/traces_.  
+O `gcc` foi escolhido por ser um programa particularmente relevante, especialmente para a área de desenvolvimento, em que os tempos de compilação podem ser críticos para grandes projetos.
+
+Antes de mais nada foram avaliados as políticas de _replacement_, _fetch_, _write allocate_ e _write back_; para tanto foram escolhidos como parâmetros iniciais das _caches_ a configuração de L1 a L2 de um _core_ do _AMD Phenom II X4 955 Black Edition_:
+|Cache|Cache size|Block size|Associativity|
+|---|---|---|---|
+|L1 type instruction|64K|64|2|
+|L1 type data|64K|64|2|
+|L2 type unified|512K|64|2|
+
 
 ### Avaliação de _replacement policy_
 

@@ -6,16 +6,19 @@ import subprocess as sp
 def main():
     traces = [('/home/staff/lucas/mc723/traces/176.gcc.f2b/', 'gcc_f2b'), ('/home/staff/lucas/mc723/traces/176.gcc.m2b', 'gcc_m2b')]
     for i, (tracepath, trname) in enumerate(traces):
-        # for j, repl in enumerate(['l', 'f', 'r']):
-        #     varname = 'repl'
-        #     var = 'repl=%s' % repl
+        for j, repl in enumerate(['l', 'f', 'r']):
+            varname = 'repl'
+            var = 'repl=%s' % repl
         # for j, fetch in enumerate(['d', 'a', 'm', 't', 'l']):
         #     varname = 'fetch'
         #     var = 'fetch=%s' % fetch
-        for j, walloc in enumerate(['a', 'n', 'f']):
-            varname = 'walloc'
-            var = 'walloc=%s' % walloc
+        # for j, walloc in enumerate(['a', 'n', 'f']):
+        #     varname = 'walloc'
+        #     var = 'walloc=%s' % walloc
         # for j, wback in enumerate(['a', 'n', 'f']):
+        #     varname = 'wback'
+        #     var = 'wback=%s' % wback
+
             os.chdir(tracepath)
             command  = '../../dinero4sbc/dineroIV'
             args = [command]
@@ -23,9 +26,9 @@ def main():
             args += ['-trname', trname]
             args += ['-maxtrace', '20']
 
-            repl = 'l'
+            # repl = 'l'
             fetch = 'l'
-            # walloc = 'a'
+            walloc = 'a'
             wback = 'a'
 
             l1isize = '64K'
@@ -44,7 +47,7 @@ def main():
             l1dwalloc = walloc
             l1dwback = wback
 
-            l2usize = '64K'
+            l2usize = '512K'
             l2ubsize = '64'
             l2uassoc = '16'
             l2urepl = repl
