@@ -13,7 +13,11 @@ Neste experimento foi usado um simulador do processador MIPS, criado com a lingu
 ### Contando instruções
 
 Para avaliar o número de instruções do tipo _add_ que ocorrem em um programa simples, foram simuladas duas versões de um _hello_world_ em C; a primeira sem nenhuma operação de soma:  
-```
+```  
   printf("hello.\n");
-```
-
+```  
+e a segunda contendo somente uma operação de soma (que não seria compilada caso otimizações fossem sido usadas):  
+```  
+  int a = -5 + 3;
+  printf("hello.\n");
+```  
