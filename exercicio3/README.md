@@ -12,16 +12,20 @@ Neste experimento foi usado um simulador do processador MIPS, criado com a lingu
 
 ### Contando instruções
 
-Para avaliar o número de instruções do tipo _add_ que ocorrem em um programa simples, foram simuladas duas versões de um _hello_world_ em C; a primeira sem nenhuma operação de soma:  
+Para avaliar o número de instruções do tipo _add_ que ocorrem em um programa simples, foram simuladas três versões de um _hello_world_ em C; a primeira sem nenhuma operação de soma:  
 ```  
   printf("hello.\n");
 ```  
-e a segunda contendo somente uma operação de soma (que nem seria compilada caso otimizações fossem utilizadas):  
+a segunda contendo somente uma operação de soma (que nem seria compilada caso otimizações fossem utilizadas):  
 ```  
   int a = -5 + 3;
   printf("hello.\n");
 ```  
-
+e a terceira também mostrando o resultado na _string_:  
+```  
+  int a = -5 + 3;
+  printf("hello %d.\n", a);
+```  
 A primeira versão gerou o seguinte número de instruções do tipo _add_:  
 ```  
 counter_add: 0
@@ -29,13 +33,21 @@ counter_addi: 1
 counter_addu: 171
 counter_addiu: 273
 ```  
-e a segunda:  
+a segunda:  
 ```  
 counter_add: 0
 counter_addi: 1
 counter_addu: 171
 counter_addiu: 274
 ```  
+e a terceira:
+```  
+counter_add: 0
+counter_addi: 1
+counter_addu: 301
+counter_addiu: 378
+```  
 
 Deste exemplo ficam claros os seguintes pontos:  
 - Existe um extenso arcabouço para sustentar um programa simples como o _hello_world_, com mais de 400 instruções do tipo _add_ somente para mostrar uma _string_ no _display_, mesmo sem haver qualquer operação de soma **explícita** contida no _source_.
+- Como foram somados dois imediatos e seu valor atribuído a uma variável na segunda versão, foi adicionada apenas uma instrução _addiu_. Percebe-se pela terceira versão que se o resultado for inserido na _string_, o número de instruções do tipo _add_ aumenta em quase 50%; é claro que converter o valor para caracteres e adicioná-los à _string_ não é uma tarefa tão simples quanto fazer esta modificação no _source_.
