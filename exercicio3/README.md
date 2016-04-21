@@ -58,7 +58,7 @@ Deste exemplo ficam claros os seguintes pontos:
 
 Foram avaliados os números de ciclos necessários para executar os programas _susan edges (small)_, _rijndael decoder (small)_ e _gsm coder (large)_; os resultados seguem abaixo.  
 
-#### CPI médio:  
+#### CPI médio utilizado para estimativa de número de ciclos:  
 |Categoria             |CPI médio          |
 |----------------------|------------------:|
 |Acesso à memória      |                 10|
