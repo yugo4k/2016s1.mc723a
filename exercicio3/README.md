@@ -16,8 +16,26 @@ Para avaliar o número de instruções do tipo _add_ que ocorrem em um programa 
 ```  
   printf("hello.\n");
 ```  
-e a segunda contendo somente uma operação de soma (que não seria compilada caso otimizações fossem sido usadas):  
+e a segunda contendo somente uma operação de soma (que nem seria compilada caso otimizações fossem utilizadas):  
 ```  
   int a = -5 + 3;
   printf("hello.\n");
 ```  
+
+A primeira versão gerou o seguinte número de instruções do tipo _add_:  
+```  
+counter_add: 0
+counter_addi: 1
+counter_addu: 171
+counter_addiu: 273
+```  
+e a segunda:  
+```  
+counter_add: 0
+counter_addi: 1
+counter_addu: 171
+counter_addiu: 274
+```  
+
+Deste exemplo ficam claros os seguintes pontos:  
+- Existe um extenso arcabouço para sustentar um programa simples como o _hello_world_, com mais de 400 instruções do tipo _add_ somente para mostrar uma _string_ no _display_, mesmo sem haver qualquer operação de soma **explícita** contida no _source_.
