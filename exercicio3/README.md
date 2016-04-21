@@ -58,23 +58,17 @@ Deste exemplo ficam claros os seguintes pontos:
 
 Foram avaliados os números de ciclos necessários para executar os programas _susan edges (small)_, _rijndael decoder (small)_ e _gsm coder (large)_; os resultados seguem abaixo.  
 
-#### Número de instruções:  
-|Categoria             |susan edges (small)|rijndael decoder (small)|gsm coder (large)|
-|----------------------|------------------:|-----------------------:|----------------:|
-|Acesso à memória      |2785538            |13745318                |480882985        |
-|Controle (branch/jump)|961478             |1600121                 |91942660         |
-|Outras                |4346133            |31125176                |911651559        |
-
 #### CPI médio:  
 |Categoria             |CPI médio          |
-|----------------------|-------------------|
+|----------------------|------------------:|
 |Acesso à memória      |                 10|
 |Controle (branch/jump)|                  3|
 |Outras                |                  1|
 
-#### Número de ciclos estimado:  
-|Categoria             |susan edges (small)|rijndael decoder (small)|gsm coder (large)|
-|----------------------|-------------------|------------------------|-----------------|
-|Acesso à memória      |2785538            |13745318                |480882985        |
-|Controle (branch/jump)|961478             |1600121                 |91942660         |
-|Outras                |4346133            |31125176                |911651559        |
+#### Número de instruções e total estimado de ciclos:  
+|Categoria                           |susan edges (small)|rijndael decoder (small)|gsm coder (large)|
+|------------------------------------|------------------:|-----------------------:|----------------:|
+|Instruções de acesso à memória      |2785538            |13745318                |480882985        |
+|Instruções de controle (branch/jump)|961478             |1600121                 |91942660         |
+|Outras instruções                   |4346133            |31125176                |911651559        |
+|Total estimado de ciclos            |35085947           |173378719               |5996309389       |
