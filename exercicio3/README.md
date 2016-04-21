@@ -60,8 +60,8 @@ Foram avaliados os números de ciclos necessários para executar os programas _s
 
 #### Número de instruções:  
 |Categoria             |susan edges (small)|rijndael decoder (small)|gsm coder (large)|
-|----------------------|-------------------|------------------------|-----------------|
-|Acesso à memória      |            2785538|                13745318|        480882985|
+|----------------------|------------------:|-----------------------:|----------------:|
+|Acesso à memória      |2785538            |13745318                |480882985        |
 |Controle (branch/jump)|961478             |1600121                 |91942660         |
 |Outras                |4346133            |31125176                |911651559        |
 
