@@ -51,4 +51,17 @@ counter_addiu: 378
 Deste exemplo ficam claros os seguintes pontos:  
 - Existe um extenso arcabouço para sustentar um programa simples como o _hello_world_, com mais de 400 instruções do tipo _add_ somente para mostrar uma _string_ no _display_, mesmo sem haver qualquer operação de soma **explícita** contida no _source_.
 - Como foram somados dois imediatos e seu valor atribuído a uma variável na segunda versão, foi adicionada apenas uma instrução _addiu_. Percebe-se pela terceira versão que se o resultado for inserido na _string_, o número de instruções do tipo _add_ aumenta em quase 50%; é claro que converter o valor para caracteres e adicioná-los à _string_ não é uma tarefa tão simples quanto fazer esta modificação no _source_.  
-- Apesar de um dos imediatos ter sinal negativo e a variável ser por _default_ do tipo _signed_, foi usada a instrução _addiu_ ao invés de _addi_; isso se deve ao fato que a representação binária de negativos ser a _complement of 2_, tal que o tratamento da soma será o mesmo. Até mesmo caso ocorra overflow, apesar de a documentação indicar um resultado de _undefined behavior_ para variáveis do tipo _signed_ e _modulo power of two_ (_wrap_) para _unsigned_, o resultado comum em C (sem _flags_ específicas de compilação) será o _wrap_, tal que as instruções _add_ do tipo _unsigned_ são perfeitamente adequadas para _signed integers_ e _unsigned integers_.
+- Apesar de um dos imediatos ter sinal negativo e a variável ser por _default_ do tipo _signed_, foi usada a instrução _addiu_ ao invés de _addi_; isso se deve ao fato que a representação binária de negativos ser a _complement of 2_, tal que o tratamento da soma será o mesmo. Até mesmo caso ocorra overflow, apesar de a documentação indicar um resultado de _undefined behavior_ para variáveis do tipo _signed_ e _modulo power of two_ (_wrap_) para _unsigned_, o resultado comum em C (sem _flags_ específicas de compilação) será o _wrap_, tal que as instruções _add_ do tipo _unsigned_ são perfeitamente adequadas para _signed integers_ e _unsigned integers_.  
+
+
+### Avaliando o desempenho
+
+Foram avaliados os números de ciclos necessários para executar os programas _susan edges (small)_, _rijndael decoder (small)_ e _gsm coder (large)_; os resultados seguem abaixo
+
+#### Número de ciclos:  
+|                      |susan edges (small)|rijndael decoder (small)|gsm coder (large)|
+|----------------------|-------------------|------------------------|-----------------|
+|Acesso à memória      |2785538            |13745318                |480882985        |
+|Controle (branch/jump)|961478             |1600121                 |91942660         |
+|Outras                |4346133            |31125176                |911651559        |
+
