@@ -47,7 +47,10 @@ global_lock: |       1|
 ```
 
 Como percebe-se acima, a leitura (_readm_) do valor armazenado no periférico (addr:0x06400000) atômicamente retorna o para o _caller_ e então altera o valor armazenado para 1; a escrita meramente o altera para o valor desejado.  
-Isto serve como a funcionalidade de _mutex_ desejada: uma leitura do valor 1 significa que o _lock_ já foi adquirido por outro processo, uma leitura de 0 significa que este processo conseguiu o lock e outros programas não conseguirão o mesmo _lock_ independentemente do fluxo de processamento (visto que o valor foi atômicamente alterado para 1) enquanto a escrita do valor 0 no periférico não for realizada (quando o processo que conseguiu o _lock_ sair região crítica).
+Isto serve como a funcionalidade de _mutex_ desejada:
+- uma leitura do valor 1 significa que o _lock_ já foi adquirido por outro processo,
+- uma leitura de 0 significa que este processo conseguiu o lock e outros programas não conseguirão o mesmo _lock_ independentemente do fluxo de processamento (visto que o valor foi atômicamente alterado para 1)...
+- enquanto a escrita do valor 0 no periférico não for realizada (quando o processo que conseguiu o _lock_ sair região crítica).
 
 ### Contando instruções
 
