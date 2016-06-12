@@ -52,10 +52,7 @@ Isto serve como a funcionalidade de _mutex_ desejada:
 - uma leitura de 0 significa que este processo conseguiu o lock e outros programas não conseguirão o mesmo _lock_ independentemente do fluxo de processamento (visto que o valor foi atômicamente alterado para 1)...
 - enquanto a escrita do valor 0 no periférico não for realizada (quando o processo que conseguiu o _lock_ sair região crítica).
 
-### Contando instruções
 
-### Avaliando o desempenho
 
-#### CPI médio utilizado para estimativa de número de ciclos:  
+### Plataforma multicore
 
-#### Número de instruções e total estimado de ciclos:  
