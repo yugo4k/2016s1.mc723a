@@ -13,7 +13,41 @@ Nesta etapa o sistema agora não consiste somente em um processador e uma memór
 
 O acesso destes componentes então se dá simplesmente criando _pointers_ para os endereços das _ports_ dos periféricos, de maneira que a comunicação se dá através leituras e escritas de valores através destes canais. Entretanto, como esta comunicação é uma extensão da maneira como se trata a memória, é necessário não permitir que o sistema faça caching de leitura ou escrita: isso pode ser feito simplesmente adicionando-se a `volatile` _keyword_ precedendo o tipo das _pointer variables_ para os periféricos.
 
-Para demonstrar esta funcionalidade, foi criada uma aplicação _hello_ ([y4k/hello.c](y4k/hello.c))
+Uma demonstração extremamente simples do uso de periféricos é o uso de uma abstração de _hardware_ que implementa a funcionalidade de _lock variable_, em que a leitura e escrita de valores é realizada de maneira atômica, como é necessário para a implementação da lógica de _mutex_ no uso de sistemas com concorrência.
+
+Para demonstrar esta funcionalidade, foi criada uma aplicação _hello_ ([y4k/hello.c](y4k/hello.c)) que após fazer o display da string "hello." realiza diversos ciclos de 2 leituras no periférico de _lock_ e escrita do mesmo. O trecho abaixo foi retirado do _output_ inicial do mesmo:  
+```
+hello.
+
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       0|
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       1|
+
+writem, addr:0x06400000, data:0000000000
+
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       0|
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       1|
+
+writem, addr:0x06400000, data:0x00000001
+
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       1|
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       1|
+
+writem, addr:0x06400000, data:0x00000002
+
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       2|
+readm,  addr:0x06400000, data:0000000000
+global_lock: |       1|
+```
+
+Como percebe-se acima, a leitura (_readm_) do valor armazenado no periférico (addr:0x06400000) atômicamente retorna o para o _caller_ e então altera o valor armazenado para 1; a escrita meramente o altera para o valor desejado.  
+Isto serve como a funcionalidade de _mutex_ desejada: uma leitura do valor 1 significa que o _lock_ já foi adquirido por outro processo, uma leitura de 0 significa que este processo conseguiu o lock e outros programas não conseguirão o mesmo _lock_ independentemente do fluxo de processamento (visto que o valor foi atômicamente alterado para 1) enquanto a escrita do valor 0 no periférico não for realizada quando o processo sair região crítica.
 
 ### Contando instruções
 
