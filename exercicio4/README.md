@@ -15,7 +15,7 @@ O acesso destes componentes então se dá simplesmente criando _pointers_ para o
 
 Uma demonstração extremamente simples do uso de periféricos é o uso de uma abstração de _hardware_ que implementa a funcionalidade de _lock variable_, em que a leitura e escrita de valores é realizada de maneira atômica, como é necessário para a implementação da lógica de _mutex_ no uso de sistemas com concorrência.
 
-Para demonstrar esta funcionalidade, foi criada uma aplicação _hello_ ([basic_peripheral/y4k/hello.c](y4k/hello.c)) que após fazer o display da string "hello." realiza diversos ciclos de 2 leituras no periférico de _lock_ e escrita do mesmo. O trecho abaixo foi retirado do _output_ inicial do mesmo:  
+Para demonstrar esta funcionalidade, foi criada uma aplicação _hello_ ([basic_peripheral/y4k/hello.c](basic_peripheral/y4k/hello.c)) que após fazer o display da string "hello." realiza diversos ciclos de 2 leituras no periférico de _lock_ e escrita do mesmo. O trecho abaixo foi retirado do _output_ inicial do mesmo:  
 ```
 hello.
 
