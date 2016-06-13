@@ -95,4 +95,6 @@ ArchC: Simulation statistics
     Simulation speed: 8354.02 K instr/s
 ```
 
+A segunda contagem (do segundo _core_) tem cerca de 10000 instruções a menos que a primeira (do primeiro _core_); isso ocorre porque `submain1` termina depois de `submain2`, visto que o anterior faz a soma e mostra o resultado no _display_. Esta diferença permanece aproximadamente constante mesmo alterando-se o número de elementos na _array_ somada.
+
 Assim, apesar de se ter atingido o objetivo de rodar a aplicação com comandos separados entre os dois _cores_ simulando o paralelismo, obviamente houveram problemas de implementação, o que se pretende sanar o mais rápido possível para a realização do projeto 3.
