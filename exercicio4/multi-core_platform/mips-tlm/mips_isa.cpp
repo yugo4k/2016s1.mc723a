@@ -70,9 +70,10 @@ void ac_behavior(begin)
   hi = 0;
   lo = 0;
 
-  RB[29] =  AC_RAM_END - 1024 - processors_started++ * DEFAULT_STACK_SIZE;
-
-
+  // printf("preprocessor: %d\n", processors_started);
+  RB[29] =  AC_RAM_END - 1024 - processors_started * DEFAULT_STACK_SIZE;
+  ++processors_started;
+  // printf("RB[29]: %#10x\n", RB[29]);
 }
 
 //!Behavior called after finishing simulation

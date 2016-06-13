@@ -69,7 +69,8 @@ ac_tlm_rsp_status ac_tlm_peripheral::writem( const uint32_t &a , const uint32_t 
 {
   // cout << "addr: " <<  std::hex  << a << " data: " << d << endl;
   // return SUCCESS;
-  printf("writem, addr:%#010x, data:%#010x\n", a, __bswap_32(d));
+
+  // printf("writem, addr:%#010x, data:%#010x\n", a, __bswap_32(d));
   if (a == 100<<20) {
     this->lock = d;
   }
@@ -86,10 +87,12 @@ ac_tlm_rsp_status ac_tlm_peripheral::readm( const uint32_t &a , uint32_t &d )
 {
   // d = 0;
   // return SUCCESS;
-  printf("readm,  addr:%#010x, data:%#010x\n", a, __bswap_32(d));
+
+  // printf("readm,  addr:%#010x, data:%#010x\n", a, __bswap_32(d));
   if (a == 100<<20) {
     d = this->lock;
     this->lock = __bswap_32(1);
+    // this->lock = 1;
   }
   return SUCCESS;
 }
