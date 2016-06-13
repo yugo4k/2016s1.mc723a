@@ -15,7 +15,7 @@ O acesso destes componentes então se dá simplesmente criando _pointers_ para o
 
 Uma demonstração extremamente simples do uso de periféricos é o uso de uma abstração de _hardware_ que implementa a funcionalidade de _lock variable_, em que a leitura e escrita de valores é realizada de maneira atômica, como é necessário para a implementação da lógica de _mutex_ no uso de sistemas com concorrência.
 
-Para demonstrar esta funcionalidade, foi criada uma aplicação _hello_ ([basic_peripheral/y4k/hello.c](basic_peripheral/y4k/hello.c)) que após fazer o display da string "hello." realiza diversos ciclos de 2 leituras no periférico de _lock_ e escrita do mesmo. O trecho abaixo foi retirado do _output_ inicial do mesmo:  
+Para demonstrar esta funcionalidade, foi criada uma ([aplicação](basic_peripheral/y4k/hello.c)) que após fazer o display da string "hello." realiza diversos ciclos de 2 leituras no periférico de _lock_ e escrita do mesmo. O trecho abaixo foi retirado do _output_ inicial do mesmo:  
 ```
 hello.
 
@@ -62,7 +62,7 @@ Entretanto as instruções acima, excerto do livro _Electronic System Level Desi
 
 A solução encontrada foi a separação do fluxo de execução através de funções com nomes diferentes, `submain1` e `submain2`; mesmo assim variáveis locais criadas em cada função acabavam ocupando o mesmo espaço de memória, tal que a execução de um função interferia com o funcionamento da outra, tal que como último _work-around_ todas as variáveis utilizadas foram globais. Obviamente esta não é uma solução ideal, entretanto não foi possível determinar a causa do funcionamento inesperado do simulador mesmo utilizando-se horas no estudo do funcionamento do mesmo.
 
-A execução do aplicativo [_source_](./multi-core_platform/y4k/hello.c) que pode ser compilado e executado com este [_shell-script](.multi-core_platform/y4k/do_all.sh) mostra que o resultado é o esperado, uma soma de valor 4294930221, e os _printf_s comentados, se ativados, mostram que o fluxo de execução é correto. Entretanto o número de instruções executadas também parece estar errado, somando todas as instruções executadas por ambos os _cores_ em apenas um contador. O resultado segue:  
+A execução do aplicativo de soma ([_source_](./multi-core_platform/y4k/hello.c)) que pode ser compilada e executada com este [_shell-script_](.multi-core_platform/y4k/do_all.sh) mostra que o resultado é o esperado, uma soma de valor 4294930221, e os _printf_s comentados, se ativados, mostram que o fluxo de execução é correto. Entretanto o número de instruções executadas também parece estar errado, somando todas as instruções executadas por ambos os _cores_ em apenas um contador. O resultado segue:  
 ```
         SystemC 2.3.1-Accellera --- Mar 31 2016 17:15:46
         Copyright (c) 1996-2014 by all Contributors,
