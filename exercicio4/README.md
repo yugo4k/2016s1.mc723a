@@ -3,7 +3,7 @@
 
 ---
 
-Este exercício continua o estudo realizado no exercício 3 e no projeto 2, aumentando agora a complexidade da simulação do sistema ao adicionar um _router_ entre as componentes do sistema, periféricos e múltiplos núcleos de processamento à CPU.
+Este exercício continua o estudo realizado no exercício 3 e no projeto 2, aumentando agora a complexidade da simulação do sistema ao adicionar um _router_ e um periférico entre os componentes do sistema, além de colocar um núcleo de processamento adicional à CPU.
 
 Neste experimento foi usado um simulador do processador MIPS, criado com a linguagem ArchC, criado pelo time do IC de mesmo nome e baseado na linguagem de descrição de hardware SystemC. O ArchC permite, entre outras funcionalidades, a avalição do número de execuções de cada tipo de instrução pelo programa.
 
