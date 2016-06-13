@@ -94,3 +94,5 @@ ArchC: Simulation statistics
     Number of instructions executed: 2506206
     Simulation speed: 8354.02 K instr/s
 ```
+
+Assim, apesar de se ter atingido o objetivo de rodar a aplicação com comandos separados entre os dois _cores_ simulando o paralelismo, obviamente houveram problemas de implementação, o que se pretende sanar o mais rápido possível para a realização do projeto 3.
