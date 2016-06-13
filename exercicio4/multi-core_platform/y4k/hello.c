@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define SIZE 65500
+#define SIZE 92682
 
 volatile uint32_t *global_lock = (uint32_t*)(100<<20);
 volatile uint32_t cpu_counter = 0;
@@ -44,7 +44,7 @@ void submain1() {
   result = sum1 + sum2;
 
   while (*global_lock);
-  printf("\n\n The sum of the first %d numbers (including 0) squared is %d.\n\n\n", SIZE, result);
+  printf("\n\n The sum of the first %d numbers (including 0) squared is %u.\n\n\n", SIZE, result);
   *global_lock = 0;
 
   while (*global_lock);

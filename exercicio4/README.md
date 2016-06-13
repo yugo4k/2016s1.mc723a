@@ -56,3 +56,41 @@ Isto serve como a funcionalidade de _mutex_ desejada:
 
 ### Plataforma multicore
 
+Fazendo modificações no código da simulação com a adição de um processador adicional conforme instruções em [Multicore_Lock.pdf](./Multicore_Lock.pdf), foi possível criar uma aplicação que realiza a soma dos primeiros 92683 números naturais (incluindo o 0), com as operações de soma divididas entre os dois _cores_.
+
+Entretanto as instruções acima, excerto do livro _Electronic System Level Design_, não parecem corresponder a versão do ArchC utilizada nesta atividade. O principal dos problemas foi a aparente impossibilidade de efetivamente separar os _stacks_ do _main_ executado por cada _core_, além de aparentemente as variáveis locais estarem fora da faixa de memória reservada ao _stack_.
+
+A solução encontrada foi a separação do fluxo de execução através de funções com nomes diferentes, `submain1` e `submain2`; mesmo assim variáveis locais criadas em cada função acabavam ocupando o mesmo espaço de memória, tal que a execução de um função interferia com o funcionamento da outra, tal que como último _work-around_ todas as variáveis utilizadas foram globais. Obviamente esta não é uma solução ideal, entretanto não foi possível determinar a causa do funcionamento inesperado do simulador mesmo utilizando-se horas no estudo do funcionamento do mesmo.
+
+A execução do aplicativo [_source_](./multi-core_platform/y4k/hello.c) que pode ser compilado e executado com este [_shell-script](.multi-core_platform/y4k/do_all.sh) mostra que o resultado é o esperado, uma soma de valor 4294930221, e os _printf_s comentados, se ativados, mostram que o fluxo de execução é correto. Entretanto o número de instruções executadas também parece estar errado, somando todas as instruções executadas por ambos os _cores_ em apenas um contador. O resultado segue:  
+```
+        SystemC 2.3.1-Accellera --- Mar 31 2016 17:15:46
+        Copyright (c) 1996-2014 by all Contributors,
+        ALL RIGHTS RESERVED
+ArchC: Reading ELF application file: /home/ec2014/ra033324/y4k/classes/mc723a/git_2016s1.mc723a/exercicio4/multi-core_platform/mips-tlm//../y4k/hello.mips
+ArchC: -------------------- Starting Simulation --------------------
+ArchC: Reading ELF application file: /home/ec2014/ra033324/y4k/classes/mc723a/git_2016s1.mc723a/exercicio4/multi-core_platform/mips-tlm//../y4k/hello.mips
+ArchC: -------------------- Starting Simulation --------------------
+
+submain1 started
+submain2 started
+submain2 finished
+ArchC: -------------------- Simulation Finished --------------------
+
+
+ The sum of the first 92682 numbers (including 0) squared is 4294930221.
+
+
+submain1 finished
+ArchC: -------------------- Simulation Finished --------------------
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+ArchC: Simulation statistics
+    Times: 0.30 user, 0.00 system, 0.31 real
+    Number of instructions executed: 2516113
+    Simulation speed: 8387.04 K instr/s
+ArchC: Simulation statistics
+    Times: 0.30 user, 0.00 system, 0.30 real
+    Number of instructions executed: 2506206
+    Simulation speed: 8354.02 K instr/s
+```
