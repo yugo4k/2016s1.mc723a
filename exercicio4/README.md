@@ -58,7 +58,7 @@ Isto serve como a funcionalidade de _mutex_ desejada:
 
 Fazendo modificações no código da simulação com a adição de um processador adicional conforme instruções em [Multicore_Lock.pdf](./Multicore_Lock.pdf), foi possível criar uma aplicação que realiza a soma dos primeiros 92683 números naturais (incluindo o 0), com as operações de soma divididas entre os dois _cores_.
 
-Entretanto as instruções acima, excerto do livro _Electronic System Level Design_, não parecem corresponder a versão do ArchC utilizada nesta atividade. O principal dos problemas foi a aparente impossibilidade de efetivamente separar os _stacks_ do _main_ executado por cada _core_, além de aparentemente as variáveis locais estarem fora da faixa de memória reservada ao _stack_.
+Entretanto as instruções acima, excerto do livro _Electronic System Level Design_, não parecem corresponder a versão do ArchC utilizada nesta atividade. O principal dos problemas foi a aparente impossibilidade de efetivamente separar os _stacks_ do _main_ executado por cada _core_, além de que, ao que tudo indica, as variáveis locais estarem fora da faixa de memória reservada ao _stack_.
 
 A solução encontrada foi a separação do fluxo de execução através de funções com nomes diferentes, `submain1` e `submain2`; mesmo assim variáveis locais criadas em cada função acabavam ocupando o mesmo espaço de memória, tal que a execução de um função interferia com o funcionamento da outra, tal que como último _work-around_ todas as variáveis utilizadas foram globais. Obviamente esta não é uma solução ideal, entretanto não foi possível determinar a causa do funcionamento inesperado do simulador mesmo utilizando-se horas no estudo do funcionamento do mesmo.
 
